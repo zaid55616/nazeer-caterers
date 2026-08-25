@@ -1,758 +1,3105 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>KGN Biriyani Point | Biriyani & Catering in Mancherial</title>
+  <title>Nazeer Caterers | Premium Catering in Karimnagar</title>
 
-    <meta name="description"
-        content="KGN Biriyani Point in Mancherial, Telangana. Biriyani and catering for family functions, birthdays, marriages and small or large gatherings.">
+  <meta
+    name="description"
+    content="Nazeer Caterers in Karimnagar offers premium Mughlai and Hyderabadi catering for Weddings, Nikah, Rasam, Manja, Walima, Birthday Parties, Family Functions and large or small events."
+  />
 
-    <link rel="stylesheet" href="style.css">
+  <meta
+    name="keywords"
+    content="Nazeer Caterers Karimnagar, catering Karimnagar, Mughlai catering Karimnagar, Hyderabadi catering Karimnagar, wedding catering Karimnagar, Nikah catering, Walima catering, Biryani catering"
+  />
+
+  <meta name="theme-color" content="#080808" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* =====================================================
+       ROOT
+    ====================================================== */
+
+    :root {
+      --bg: #080808;
+      --bg-2: #0d0d0d;
+      --surface: #121212;
+      --surface-2: #181818;
+
+      --text: #f5efe6;
+      --text-soft: #d6cec4;
+      --muted: #999188;
+
+      --gold: #cda75f;
+      --gold-light: #efd49a;
+      --gold-dark: #8b6931;
+
+      --border: rgba(255, 255, 255, 0.09);
+      --gold-border: rgba(205, 167, 95, 0.28);
+
+      --max-width: 1220px;
+      --radius: 24px;
+
+      --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* =====================================================
+       RESET
+    ====================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background:
+        radial-gradient(
+          circle at 85% 0%,
+          rgba(205, 167, 95, 0.08),
+          transparent 25%
+        ),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body.lock {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* =====================================================
+       ANNOUNCEMENT
+    ====================================================== */
+
+    .announcement {
+      border-bottom: 1px solid var(--border);
+      background: #050505;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .announcement-inner {
+      min-height: 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .announcement strong {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    /* =====================================================
+       NAVIGATION
+    ====================================================== */
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-tag {
+      margin-top: 7px;
+      color: var(--gold);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .nav-links a {
+      color: #d2cbc2;
+      font-size: 13px;
+      transition: 0.3s var(--ease);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s var(--ease);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-book {
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: 0.35s var(--ease);
+    }
+
+    .nav-book:hover {
+      background: linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+      );
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      width: 46px;
+      height: 46px;
+      display: none;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: #121212;
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    /* =====================================================
+       COMMON
+    ====================================================== */
+
+    section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .section-kicker {
+      color: var(--gold-light);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: clamp(39px, 5vw, 64px);
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+    }
+
+    .section-text {
+      color: var(--muted);
+      max-width: 680px;
+      margin-top: 18px;
+      font-size: 15px;
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 52px;
+    }
+
+    .gold-line {
+      width: 55px;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        var(--gold),
+        transparent
+      );
+      margin: 18px 0;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity 0.8s var(--ease),
+        transform 0.8s var(--ease);
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =====================================================
+       BUTTONS
+    ====================================================== */
+
+    .button-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.35s var(--ease);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      color: #121212;
+      background: linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+      );
+      box-shadow:
+        0 14px 34px rgba(205, 167, 95, 0.14),
+        inset 0 1px rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 20px 45px rgba(205, 167, 95, 0.25),
+        inset 0 1px rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-secondary {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.035);
+      border-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-secondary:hover {
+      color: var(--gold-light);
+      border-color: var(--gold-border);
+      transform: translateY(-3px);
+    }
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+      min-height: calc(100vh - 118px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      isolation: isolate;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 5, 5, 0.97) 0%,
+          rgba(5, 5, 5, 0.88) 37%,
+          rgba(5, 5, 5, 0.47) 72%,
+          rgba(5, 5, 5, 0.58) 100%
+        ),
+        url("assets/biryani.png") center / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 76% 42%,
+          rgba(205, 167, 95, 0.13),
+          transparent 22%
+        ),
+        linear-gradient(
+          to bottom,
+          transparent 52%,
+          rgba(8, 8, 8, 0.98) 100%
+        );
+      z-index: -1;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 90px 0 130px;
+    }
+
+    .hero-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 10px;
+      margin-bottom: 23px;
+    }
+
+    .hero-location::before {
+      content: "";
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: clamp(53px, 8vw, 98px);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      color: #cec5bb;
+      font-size: 17px;
+      margin-top: 27px;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 21px;
+      margin-top: 35px;
+    }
+
+    .hero-proof span {
+      color: #b7afa6;
+      font-size: 11px;
+    }
+
+    .hero-proof span::before {
+      content: "✦";
+      color: var(--gold);
+      margin-right: 8px;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 25px;
+      transform: translateX(-50%);
+      color: #817a73;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.19em;
+      text-align: center;
+    }
+
+    .scroll-indicator span {
+      display: block;
+      width: 1px;
+      height: 32px;
+      margin: 7px auto 0;
+      background: linear-gradient(
+        var(--gold),
+        transparent
+      );
+      animation: scrollPulse 1.8s infinite;
+    }
+
+    @keyframes scrollPulse {
+      50% {
+        opacity: 0.25;
+        transform: translateY(7px);
+      }
+    }
+
+    /* =====================================================
+       ABOUT
+    ====================================================== */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 580px;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--border);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 580px;
+      object-fit: cover;
+    }
+
+    .about-badge {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      width: 185px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(8, 8, 8, 0.75);
+      border: 1px solid var(--gold-border);
+      backdrop-filter: blur(16px);
+    }
+
+    .about-badge strong {
+      display: block;
+      color: var(--gold-light);
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .about-points {
+      margin-top: 28px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .about-point {
+      display: flex;
+      gap: 14px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-point > span {
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .about-point strong {
+      font-size: 14px;
+    }
+
+    .about-point small {
+      display: block;
+      color: #898178;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    /* =====================================================
+       CUISINE
+    ====================================================== */
+
+    .cuisine-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 15px;
+    }
+
+    .food-card {
+      position: relative;
+      min-height: 390px;
+      overflow: hidden;
+      border-radius: 23px;
+      border: 1px solid var(--border);
+      grid-column: span 4;
+      background: var(--surface);
+      transition: 0.4s var(--ease);
+    }
+
+    .food-card:nth-child(4),
+    .food-card:nth-child(5) {
+      grid-column: span 6;
+      min-height: 330px;
+    }
+
+    .food-card img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease);
+    }
+
+    .food-card:hover img {
+      transform: scale(1.07);
+    }
+
+    .food-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-border);
+    }
+
+    .food-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(4, 4, 4, 0.96),
+          rgba(4, 4, 4, 0.24) 62%,
+          rgba(4, 4, 4, 0.03)
+        );
+    }
+
+    .food-label {
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      z-index: 2;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.58);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #eee;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .food-info {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+    }
+
+    .food-info h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 31px;
+    }
+
+    .food-info p {
+      color: #b7afa7;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .text-card {
+      grid-column: span 4;
+      min-height: 220px;
+      border-radius: 23px;
+      border: 1px solid var(--border);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(205, 167, 95, 0.1),
+          transparent 35%
+        ),
+        var(--surface);
+      transition: 0.4s var(--ease);
+    }
+
+    .text-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-border);
+    }
+
+    .text-card h3 {
+      font-size: 29px;
+      margin: 7px 0;
+    }
+
+    .text-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =====================================================
+       GUEST FAVOURITES
+    ====================================================== */
+
+    .favourites-layout {
+      display: grid;
+      grid-template-columns: 0.84fr 1.16fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .favourites-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .favourite {
+      padding: 21px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.035),
+          rgba(255, 255, 255, 0.012)
+        );
+      transition: 0.35s var(--ease);
+    }
+
+    .favourite:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-border);
+    }
+
+    .favourite h3 {
+      font-size: 21px;
+    }
+
+    .favourite p {
+      color: #8f877f;
+      font-size: 11px;
+      margin-top: 5px;
+    }
+
+    .favourite-note {
+      padding: 17px 18px;
+      margin-top: 20px;
+      border-left: 2px solid var(--gold);
+      background: rgba(205, 167, 95, 0.04);
+      color: #a29a92;
+      font-size: 12px;
+    }
+
+    /* =====================================================
+       SWEETS
+    ====================================================== */
+
+    .sweet-box {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid var(--gold-border);
+      border-radius: 28px;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(205, 167, 95, 0.09),
+          transparent 31%
+        ),
+        var(--surface);
+    }
+
+    .sweet-image {
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .sweet-image img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .sweet-box h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      line-height: 1.05;
+    }
+
+    .sweet-pills {
+      margin: 22px 0 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .sweet-pill {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #111;
+      border: 1px solid var(--border);
+      color: #d0c8bf;
+      font-size: 11px;
+    }
+
+    /* =====================================================
+       EVENTS
+    ====================================================== */
+
+    .event-shell {
+      padding: 42px;
+      border-radius: 30px;
+      border: 1px solid var(--gold-border);
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(205, 167, 95, 0.1),
+          transparent 30%
+        ),
+        var(--surface);
+    }
+
+    .event-shell h3 {
+      font-size: 35px;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 11px;
+      margin-top: 31px;
+    }
+
+    .event-card {
+      padding: 18px;
+      border-radius: 15px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02);
+      transition: 0.35s var(--ease);
+    }
+
+    .event-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold-border);
+    }
+
+    .event-card h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+    }
+
+    /* =====================================================
+       ADDITIONAL SERVICES
+    ====================================================== */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .service-card {
+      padding: 30px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.04),
+          rgba(255, 255, 255, 0.015)
+        );
+      transition: 0.35s var(--ease);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-border);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: rgba(205, 167, 95, 0.08);
+      border: 1px solid var(--gold-border);
+      color: var(--gold-light);
+      font-size: 21px;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =====================================================
+       WHY CHOOSE
+    ====================================================== */
+
+    .why-section {
+      background: #0d0d0d;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-layout {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 65px;
+    }
+
+    .why-intro {
+      position: sticky;
+      top: 115px;
+      height: max-content;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .why-card {
+      padding: 28px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-number {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      margin-bottom: 16px;
+    }
+
+    .why-card h3 {
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .why-card p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =====================================================
+       WHOLESALE
+    ====================================================== */
+
+    .wholesale-section {
+      background:
+        linear-gradient(
+          100deg,
+          rgba(7, 7, 7, 0.97),
+          rgba(7, 7, 7, 0.77)
+        ),
+        url("assets/crispy-chicken.png") center / cover no-repeat;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .wholesale-content {
+      max-width: 800px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 24px 0 27px;
+    }
+
+    .tag {
+      padding: 10px 13px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.035);
+      color: #d2c9c0;
+      font-size: 11px;
+    }
+
+    /* =====================================================
+       GALLERY
+    ====================================================== */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      grid-auto-rows: 220px;
+      gap: 13px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    .gallery-item.large {
+      grid-row: span 2;
+    }
+
+    .gallery-item.wide {
+      grid-column: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-item::after {
+      content: "VIEW";
+      position: absolute;
+      right: 13px;
+      bottom: 13px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.58);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      opacity: 0;
+      transition: opacity 0.3s var(--ease);
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    /* =====================================================
+       TESTIMONIAL
+    ====================================================== */
+
+    .review-box {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 30px;
+      text-align: center;
+      border-radius: 28px;
+      border: 1px solid var(--gold-border);
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(205, 167, 95, 0.09),
+          transparent 50%
+        ),
+        var(--surface);
+    }
+
+    .stars {
+      color: var(--gold-light);
+      letter-spacing: 0.14em;
+      margin-bottom: 17px;
+    }
+
+    .review-box blockquote {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(25px, 4vw, 40px);
+      line-height: 1.25;
+    }
+
+    .review-box small {
+      display: block;
+      color: #8a827a;
+      font-size: 12px;
+      margin-top: 18px;
+    }
+
+    /* =====================================================
+       CONTACT
+    ====================================================== */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-card,
+    .map-card {
+      border-radius: 23px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .contact-card {
+      padding: 32px;
+    }
+
+    .contact-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .contact-row {
+      margin: 9px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-row strong {
+      color: #fff;
+    }
+
+    .contact-row a:hover {
+      color: var(--gold-light);
+    }
+
+    .map-card iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      border: 0;
+      filter: grayscale(1) contrast(1.05);
+    }
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    footer {
+      padding: 65px 0 32px;
+      background: #060606;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 48px;
+    }
+
+    .footer-description {
+      max-width: 360px;
+      color: #817a73;
+      font-size: 13px;
+      margin-top: 17px;
+    }
+
+    .footer-heading {
+      color: var(--gold-light);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer-links a {
+      color: #827b73;
+      font-size: 13px;
+      transition: 0.25s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    /* Designer box - deliberately medium */
+    .designer-box {
+      width: max-content;
+      max-width: 100%;
+      margin-top: 20px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--gold-border);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(205, 167, 95, 0.08),
+          rgba(255, 255, 255, 0.02)
+        );
+      color: #979087;
+      font-size: 10px;
+      letter-spacing: 0.03em;
+    }
+
+    .designer-box strong {
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #5b5651;
+      font-size: 10px;
+    }
+
+    /* =====================================================
+       MOBILE WHATSAPP
+    ====================================================== */
+
+    .mobile-whatsapp {
+      display: none;
+    }
+
+    /* =====================================================
+       LIGHTBOX
+    ====================================================== */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      display: none;
+      place-items: center;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.93);
+      backdrop-filter: blur(14px);
+    }
+
+    .lightbox.open {
+      display: grid;
+    }
+
+    .lightbox-image {
+      width: auto;
+      max-width: 95vw;
+      max-height: 87vh;
+      border-radius: 19px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: #141414;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
+
+    @media (max-width: 1100px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .about-grid,
+      .favourites-layout,
+      .why-layout,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-intro {
+        position: static;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      section {
+        padding: 85px 0;
+      }
+
+      .announcement {
+        display: none;
+      }
+
+      .nav-inner {
+        min-height: 70px;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .nav-book {
+        display: none;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+        padding: 25px 7%;
+        background: rgba(7, 7, 7, 0.98);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 17px;
+      }
+
+      .hero {
+        min-height: 88vh;
+      }
+
+      .hero-content {
+        padding: 80px 0 125px;
+      }
+
+      .hero h1 {
+        font-size: clamp(47px, 14vw, 72px);
+      }
+
+      .hero-copy {
+        font-size: 15px;
+      }
+
+      .button-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button-row .btn {
+        width: 100%;
+      }
+
+      .hero-proof {
+        flex-direction: column;
+        gap: 11px;
+      }
+
+      .about-image,
+      .about-image img {
+        min-height: 410px;
+      }
+
+      .cuisine-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .food-card,
+      .food-card:nth-child(4),
+      .food-card:nth-child(5),
+      .text-card {
+        grid-column: auto;
+      }
+
+      .food-card {
+        min-height: 340px;
+      }
+
+      .favourites-list {
+        grid-template-columns: 1fr;
+      }
+
+      .sweet-box {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
+
+      .sweet-box h3 {
+        font-size: 34px;
+      }
+
+      .event-shell {
+        padding: 25px;
+      }
+
+      .event-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 175px;
+      }
+
+      .gallery-item.wide {
+        grid-column: span 2;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .mobile-whatsapp {
+        display: block;
+        position: fixed;
+        left: 13px;
+        right: 13px;
+        bottom: 13px;
+        z-index: 1800;
+      }
+
+      .mobile-whatsapp a {
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        border-radius: 999px;
+        background: linear-gradient(
+          135deg,
+          var(--gold-light),
+          var(--gold)
+        );
+        color: #111;
+        font-weight: 800;
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+  <!-- =====================================================
+       TOP INFORMATION BAR
+  ====================================================== -->
 
-<header class="header">
-    <div class="container nav-container">
+  <div class="announcement">
+    <div class="container announcement-inner">
+      <span>Hussainipura, Karimnagar, Telangana 505001</span>
+      <strong>Call / WhatsApp: 8801433616</strong>
+    </div>
+  </div>
 
-        <a href="#home" class="logo">
-            <span class="logo-icon">🍛</span>
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
 
-            <span>
-                <strong>KGN</strong>
-                <small>Biriyani Point</small>
-            </span>
-        </a>
+  <header class="nav">
+    <div class="container nav-inner">
 
-        <button class="menu-toggle" id="menuToggle">
-            ☰
-        </button>
+      <a href="#home" class="brand">
+        <span class="brand-name">Nazeer Caterers</span>
+        <span class="brand-tag">
+          Premium Taste • Affordable Prices
+        </span>
+      </a>
 
-        <nav class="nav" id="mainNav">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#catering">Catering</a>
-            <a href="#contact">Contact</a>
-        </nav>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Cuisine</a>
+        <a href="#favourites">Favourites</a>
+        <a href="#events">Events</a>
+        <a href="#services">Services</a>
+        <a href="#sweets">Sweets</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a
+        class="nav-book"
+        href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20I%20would%20like%20to%20book%20my%20function."
+        target="_blank"
+        rel="noopener"
+      >
+        Book Your Date
+      </a>
 
     </div>
-</header>
+  </header>
 
+  <main>
 
-<!-- ================= HERO ================= -->
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
 
-<main>
+    <section class="hero" id="home">
 
-<section class="hero" id="home">
+      <div class="container">
 
-    <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
 
-    <div class="container hero-content">
+          <div class="hero-location">
+            Karimnagar • Telangana
+          </div>
 
-        <div class="hero-text">
+          <h1>
+            Exceptional Food.
+            <br />
+            <span>Unforgettable Celebrations.</span>
+          </h1>
 
-            <span class="tag">
-                BIRIYANI • CATERING
-            </span>
+          <p class="hero-copy">
+            Rich Mughlai dishes, authentic Hyderabadi flavours,
+            biryani, kebabs, roasted specialities and more —
+            prepared to make every celebration memorable.
+          </p>
 
-            <h1>
-                Taste That Brings
-                <span>People Together</span>
-            </h1>
+          <div class="button-row">
 
-            <p>
-                Welcome to KGN Biriyani Point.
-                We provide delicious biriyani and catering
-                services for family functions, birthdays,
-                marriages and gatherings in Mancherial.
-            </p>
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20I%20would%20like%20to%20book%20my%20event."
+              target="_blank"
+              rel="noopener"
+            >
+              WhatsApp to Book →
+            </a>
 
-            <div class="hero-buttons">
+            <a
+              class="btn btn-secondary"
+              href="#menu"
+            >
+              Explore Our Cuisine ↓
+            </a>
 
-                <a href="tel:+918247462902"
-                   class="btn btn-primary">
-                    📞 Call Now
-                </a>
+          </div>
 
-                <a href="#catering"
-                   class="btn btn-outline">
-                    🍽 Catering
-                </a>
+          <div class="hero-proof">
 
-            </div>
+            <span>Small & Large Functions</span>
+            <span>Customized Menus</span>
+            <span>Hygienic Preparation</span>
+            <span>Professional Service</span>
+
+          </div>
 
         </div>
 
+      </div>
 
-        <div class="hero-card">
+      <div class="scroll-indicator">
+        Scroll to explore
+        <span></span>
+      </div>
 
-            <div class="hero-card-icon">
-                🍛
+    </section>
+
+    <!-- ===================================================
+         ABOUT
+    ==================================================== -->
+
+    <section id="about">
+
+      <div class="container about-grid">
+
+        <div class="about-image reveal">
+
+          <img
+            src="assets/kebab-platter.png"
+            alt="Premium kebab platter"
+            loading="lazy"
+          />
+
+          <div class="about-badge">
+            <strong>More</strong>
+            Than Just Catering
+          </div>
+
+        </div>
+
+        <div class="reveal">
+
+          <div class="section-kicker">
+            About Nazeer Caterers
+          </div>
+
+          <h2 class="section-title">
+            We Take Care of Everything.
+            You Enjoy Every Moment.
+          </h2>
+
+          <div class="gold-line"></div>
+
+          <p class="section-text">
+            Whether it is a grand celebration or a small gathering,
+            food is always the highlight. Nazeer Caterers brings
+            together rich flavours, careful preparation and
+            professional service to make your occasion easier
+            to enjoy.
+          </p>
+
+          <p class="section-text">
+            We serve Weddings, Nikah, Rasam, Manja, Walima,
+            Birthday Parties, Family Functions and other
+            small or large events.
+          </p>
+
+          <div class="about-points">
+
+            <div class="about-point">
+              <span>✦</span>
+
+              <div>
+                <strong>Pure Hyderabadi Flavours</strong>
+
+                <small>
+                  Rich, aromatic food inspired by the flavours
+                  of Hyderabad.
+                </small>
+              </div>
+            </div>
+
+            <div class="about-point">
+              <span>✦</span>
+
+              <div>
+                <strong>Customized Menus</strong>
+
+                <small>
+                  Build your menu around your guests,
+                  occasion and requirements.
+                </small>
+              </div>
+            </div>
+
+            <div class="about-point">
+              <span>✦</span>
+
+              <div>
+                <strong>Professional Event Service</strong>
+
+                <small>
+                  Organized support focused on a smooth
+                  function experience.
+                </small>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         CUISINE
+    ==================================================== -->
+
+    <section id="menu">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div class="section-kicker">
+            Our Cuisine
+          </div>
+
+          <h2 class="section-title">
+            Food Made for the Table
+            Everyone Remembers.
+          </h2>
+
+          <p class="section-text">
+            A premium selection focused on rich, bold and
+            celebratory flavours your guests love.
+          </p>
+
+        </div>
+
+        <div class="cuisine-grid">
+
+          <!-- BIRYANI -->
+
+          <article class="food-card reveal">
+
+            <img
+              src="assets/biryani.png"
+              alt="Biryani"
+              loading="lazy"
+            />
+
+            <span class="food-label">
+              Signature
+            </span>
+
+            <div class="food-overlay"></div>
+
+            <div class="food-info">
+              <h3>Biryani</h3>
+
+              <p>
+                Fragrant rice, rich spices and
+                celebratory flavour.
+              </p>
+            </div>
+
+          </article>
+
+          <!-- KEBAB -->
+
+          <article class="food-card reveal">
+
+            <img
+              src="assets/seekh-kebab.png"
+              alt="Seekh kebabs"
+              loading="lazy"
+            />
+
+            <span class="food-label">
+              Guest Favourite
+            </span>
+
+            <div class="food-overlay"></div>
+
+            <div class="food-info">
+
+              <h3>Kebabs</h3>
+
+              <p>
+                Grilled, aromatic and prepared
+                for memorable gatherings.
+              </p>
+
+            </div>
+
+          </article>
+
+          <!-- MUGHLAI -->
+
+          <article class="food-card reveal">
+
+            <img
+              src="assets/haleem.png"
+              alt="Mughlai haleem"
+              loading="lazy"
+            />
+
+            <span class="food-label">
+              Mughlai
+            </span>
+
+            <div class="food-overlay"></div>
+
+            <div class="food-info">
+
+              <h3>Mughlai</h3>
+
+              <p>
+                Rich, slow-cooked and full
+                of depth.
+              </p>
+
+            </div>
+
+          </article>
+
+          <!-- SEAFOOD -->
+
+          <article class="food-card reveal">
+
+            <img
+              src="assets/spicy-prawns.png"
+              alt="Spicy prawns"
+              loading="lazy"
+            />
+
+            <span class="food-label">
+              Non-Veg
+            </span>
+
+            <div class="food-overlay"></div>
+
+            <div class="food-info">
+
+              <h3>Roasted & Seafood</h3>
+
+              <p>
+                Boldly seasoned specialities
+                for non-veg lovers.
+              </p>
+
+            </div>
+
+          </article>
+
+          <!-- CURRY -->
+
+          <article class="food-card reveal">
+
+            <img
+              src="assets/chicken-curry.png"
+              alt="Chicken curry"
+              loading="lazy"
+            />
+
+            <span class="food-label">
+              Mughlai • Non-Veg
+            </span>
+
+            <div class="food-overlay"></div>
+
+            <div class="food-info">
+
+              <h3>Curries</h3>
+
+              <p>
+                Deep, rich gravies that
+                bring the feast together.
+              </p>
+
+            </div>
+
+          </article>
+
+          <!-- CHINESE -->
+
+          <div class="text-card reveal">
+
+            <div class="section-kicker">
+              Also Available
             </div>
 
             <h3>
-                KGN Biriyani Point
+              Chinese
             </h3>
 
             <p>
-                Biriyani & Catering
+              Freshly prepared Chinese favourites
+              for guests who enjoy variety.
             </p>
 
-            <div class="hero-location">
-                📍 IB Chowrasta, Ram Nagar
+          </div>
+
+          <!-- VEG/NON VEG -->
+
+          <div class="text-card reveal">
+
+            <div class="section-kicker">
+              Menu Choice
             </div>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= QUICK INFO ================= -->
-
-<section class="quick-info">
-
-    <div class="container quick-grid">
-
-        <div class="quick-card">
-            <div class="quick-icon">🍛</div>
-
-            <h3>Biriyani</h3>
+            <h3>
+              Veg & Non-Veg
+            </h3>
 
             <p>
-                Biriyani for individuals,
-                families and gatherings.
+              Vegetarian and non-vegetarian choices
+              are available according to your event menu.
             </p>
+
+          </div>
+
         </div>
 
+      </div>
 
-        <div class="quick-card">
-            <div class="quick-icon">🎉</div>
+    </section>
 
-            <h3>Functions</h3>
+    <!-- ===================================================
+         GUEST FAVOURITES
+    ==================================================== -->
 
-            <p>
-                Catering for birthdays,
-                family functions and celebrations.
-            </p>
+    <section id="favourites">
+
+      <div class="container favourites-layout">
+
+        <div class="reveal">
+
+          <div class="section-kicker">
+            Guest Favourites
+          </div>
+
+          <h2 class="section-title">
+            Dishes Guests Ask For Again.
+          </h2>
+
+          <p class="section-text">
+            This section highlights popular choices and
+            can later be updated with the exact final
+            Nazeer Caterers menu.
+          </p>
+
+          <div class="favourite-note">
+            Menus are customized according to your
+            function, guest count and requirements.
+          </div>
+
         </div>
 
+        <div class="favourites-list">
 
-        <div class="quick-card">
-            <div class="quick-icon">💍</div>
+          <div class="favourite reveal">
+            <h3>Hyderabadi Biryani</h3>
+            <p>Signature rice preparation</p>
+          </div>
 
-            <h3>Marriages</h3>
+          <div class="favourite reveal">
+            <h3>Seekh Kebabs</h3>
+            <p>Grilled non-veg favourite</p>
+          </div>
 
-            <p>
-                Catering support for marriage
-                functions and special occasions.
-            </p>
+          <div class="favourite reveal">
+            <h3>Chicken Tikka</h3>
+            <p>Smoky grilled speciality</p>
+          </div>
+
+          <div class="favourite reveal">
+            <h3>Haleem</h3>
+            <p>Rich slow-cooked favourite</p>
+          </div>
+
+          <div class="favourite reveal">
+            <h3>Roasted Specialities</h3>
+            <p>Bold and aromatic</p>
+          </div>
+
+          <div class="favourite reveal">
+            <h3>Chicken Curries</h3>
+            <p>Rich celebratory gravies</p>
+          </div>
+
+          <div class="favourite reveal">
+            <h3>Seafood</h3>
+            <p>Special non-veg selections</p>
+          </div>
+
+          <div class="favourite reveal">
+            <h3>Chinese Favourites</h3>
+            <p>Variety for every guest</p>
+          </div>
+
         </div>
 
-    </div>
+      </div>
 
-</section>
+    </section>
 
+    <!-- ===================================================
+         SWEETS
+    ==================================================== -->
 
-<!-- ================= ABOUT ================= -->
+    <section id="sweets">
 
-<section class="section" id="about">
+      <div class="container">
 
-    <div class="container about-grid">
+        <div class="section-head reveal">
 
-        <div class="about-image">
+          <div class="section-kicker">
+            Sweet Finale
+          </div>
 
-            <div class="food-circle">
-                🍛
+          <h2 class="section-title">
+            Finish the Celebration
+            on a Sweet Note.
+          </h2>
+
+          <p class="section-text">
+            Add sweets and desserts to complete your
+            wedding, Nikah, Walima, birthday or family
+            function menu.
+          </p>
+
+        </div>
+
+        <div class="sweet-box reveal">
+
+          <div class="sweet-image">
+
+            <img
+              src="assets/hyderabadi-sweets.png"
+              alt="Hyderabadi sweets"
+              loading="lazy"
+            />
+
+          </div>
+
+          <div>
+
+            <div class="section-kicker">
+              Sweets & Desserts
             </div>
 
-            <div class="about-badge">
-                KGN
-            </div>
+            <h3>
+              A Little Sweetness.
+              A Lasting Memory.
+            </h3>
 
-        </div>
-
-
-        <div class="about-content">
-
-            <span class="section-tag">
-                ABOUT KGN
-            </span>
-
-            <h2>
-                KGN Biriyani Point
-            </h2>
-
-            <p>
-                KGN Biriyani Point is a biriyani and catering
-                service based in Mancherial, Telangana.
+            <p class="section-text">
+              Ask about the sweets and dessert options
+              available for your preferred function menu.
             </p>
 
-            <p>
-                We provide biriyani and catering services
-                for family functions, birthdays, marriages,
-                celebrations and gatherings of different sizes.
-            </p>
+            <div class="sweet-pills">
 
+              <span class="sweet-pill">
+                Traditional Sweets
+              </span>
 
-            <div class="about-points">
+              <span class="sweet-pill">
+                Hyderabadi Favourites
+              </span>
 
-                <div>
-                    <span>✓</span>
-                    <p>Biriyani</p>
-                </div>
+              <span class="sweet-pill">
+                Dessert Selection
+              </span>
 
-                <div>
-                    <span>✓</span>
-                    <p>Family Functions</p>
-                </div>
-
-                <div>
-                    <span>✓</span>
-                    <p>Birthdays & Marriages</p>
-                </div>
-
-                <div>
-                    <span>✓</span>
-                    <p>Small & Large Gatherings</p>
-                </div>
+              <span class="sweet-pill">
+                Customized Orders
+              </span>
 
             </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CHEF ================= -->
-
-<section class="section section-dark">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag light">
-                OUR CHEF
-            </span>
-
-            <h2>
-                Meet Our Chef
-            </h2>
-
-            <p>
-                Leading the food preparation at
-                KGN Biriyani Point.
-            </p>
-
-        </div>
-
-
-        <div class="chef-card">
-
-            <div class="chef-icon">
-                👨‍🍳
-            </div>
-
-            <div>
-                <h3>
-                    Mohammed Irfan
-                </h3>
-
-                <p>
-                    Chef at KGN Biriyani Point
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SERVICES ================= -->
-
-<section class="section" id="services">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-                OUR SERVICES
-            </span>
-
-            <h2>
-                What We Offer
-            </h2>
-
-            <p>
-                Biriyani and catering services
-                for different occasions and gathering sizes.
-            </p>
-
-        </div>
-
-
-        <div class="food-grid">
-
-            <article class="food-card light-card">
-
-                <div class="food-image">
-                    🍛
-                </div>
-
-                <div class="food-body">
-
-                    <h3>
-                        Biriyani
-                    </h3>
-
-                    <p>
-                        Biriyani for small meals,
-                        family orders and gatherings.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="food-card light-card">
-
-                <div class="food-image">
-                    🎉
-                </div>
-
-                <div class="food-body">
-
-                    <h3>
-                        Family Functions
-                    </h3>
-
-                    <p>
-                        Catering for family functions,
-                        celebrations and gatherings.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="food-card light-card">
-
-                <div class="food-image">
-                    💍
-                </div>
-
-                <div class="food-body">
-
-                    <h3>
-                        Marriages
-                    </h3>
-
-                    <p>
-                        Catering services for marriage
-                        functions and special occasions.
-                    </p>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CATERING ================= -->
-
-<section class="section catering-section" id="catering">
-
-    <div class="container catering-box">
-
-        <div class="catering-content">
-
-            <span class="section-tag">
-                FULL CATERING SERVICE
-            </span>
-
-            <h2>
-                Catering For Every Occasion
-            </h2>
-
-            <p>
-                KGN Biriyani Point provides catering services
-                for family functions, birthdays, marriages
-                and other special occasions.
-            </p>
-
-            <p>
-                We can provide biriyani for both small
-                and large gatherings.
-            </p>
-
-            <div class="catering-list">
-
-                <div>✓ Family Functions</div>
-                <div>✓ Birthday Functions</div>
-                <div>✓ Marriage Functions</div>
-                <div>✓ Small Gatherings</div>
-                <div>✓ Large Gatherings</div>
-                <div>✓ Biriyani Catering</div>
-
-            </div>
-
 
             <a
-                href="https://wa.me/918247462902?text=Hello%20KGN%20Biriyani%20Point%2C%20I%20want%20to%20know%20about%20catering."
-                target="_blank"
-                class="btn btn-whatsapp">
-
-                💬 WhatsApp For Catering
-
+              class="btn btn-primary"
+              href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20please%20share%20your%20sweets%20and%20dessert%20options."
+              target="_blank"
+              rel="noopener"
+            >
+              Ask for Sweets Menu →
             </a>
 
-        </div>
-
-
-        <div class="catering-visual">
-
-            <div class="event-card">
-                <span>🍛</span>
-                <strong>Biriyani</strong>
-            </div>
-
-            <div class="event-card">
-                <span>🎂</span>
-                <strong>Birthdays</strong>
-            </div>
-
-            <div class="event-card">
-                <span>💍</span>
-                <strong>Marriages</strong>
-            </div>
-
-            <div class="event-card">
-                <span>👨‍👩‍👧‍👦</span>
-                <strong>Gatherings</strong>
-            </div>
+          </div>
 
         </div>
 
-    </div>
+      </div>
 
-</section>
+    </section>
 
+    <!-- ===================================================
+         EVENTS
+    ==================================================== -->
 
-<!-- ================= HYGIENE ================= -->
+    <section id="events">
 
-<section class="section hygiene-section">
+      <div class="container">
 
-    <div class="container hygiene-box">
+        <div class="section-head reveal">
 
-        <div class="hygiene-icon">
-            🧼
+          <div class="section-kicker">
+            Catering & Events
+          </div>
+
+          <h2 class="section-title">
+            From Intimate Gatherings
+            to Grand Celebrations.
+          </h2>
+
+          <p class="section-text">
+            We serve small and large functions with
+            customized menus and professional support.
+          </p>
+
         </div>
 
-        <div>
+        <div class="event-shell reveal">
 
-            <span class="section-tag">
-                HYGIENE & CLEANLINESS
+          <h3>
+            Your Occasion. Our Hospitality.
+          </h3>
+
+          <p class="section-text">
+            Tell us the occasion and we will help shape
+            the catering around it.
+          </p>
+
+          <div class="event-grid">
+
+            <div class="event-card">
+              <h4>Weddings</h4>
+            </div>
+
+            <div class="event-card">
+              <h4>Nikah</h4>
+            </div>
+
+            <div class="event-card">
+              <h4>Rasam</h4>
+            </div>
+
+            <div class="event-card">
+              <h4>Manja</h4>
+            </div>
+
+            <div class="event-card">
+              <h4>Walima</h4>
+            </div>
+
+            <div class="event-card">
+              <h4>Birthday Parties</h4>
+            </div>
+
+            <div class="event-card">
+              <h4>Family Functions</h4>
+            </div>
+
+            <div class="event-card">
+              <h4>Small Gatherings</h4>
+            </div>
+
+            <div class="event-card">
+              <h4>Large Functions</h4>
+            </div>
+
+          </div>
+
+          <div class="button-row">
+
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20I%20would%20like%20to%20plan%20my%20event."
+              target="_blank"
+              rel="noopener"
+            >
+              Plan Your Event →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         ADDITIONAL SERVICES
+    ==================================================== -->
+
+    <section id="services">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div class="section-kicker">
+            More Than Just Catering
+          </div>
+
+          <h2 class="section-title">
+            Complete Function Support
+            Beyond the Food.
+          </h2>
+
+          <p class="section-text">
+            Additional arrangements are available to
+            make your celebration more convenient.
+          </p>
+
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">
+              🚗
+            </div>
+
+            <h3>
+              Guest Transportation
+            </h3>
+
+            <p>
+              Transportation arrangements to help
+              your guests travel comfortably to and
+              from the function.
+            </p>
+
+          </article>
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">
+              🚘
+            </div>
+
+            <h3>
+              Luxury Car Services
+            </h3>
+
+            <p>
+              Luxury car arrangements for weddings,
+              Nikah, Walima, VIP guests and special occasions.
+            </p>
+
+          </article>
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">
+              🛒
+            </div>
+
+            <h3>
+              Wholesale Kirana
+            </h3>
+
+            <p>
+              Kirana items and function essentials
+              available for wholesale and bulk requirements.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         WHY CHOOSE US
+    ==================================================== -->
+
+    <section class="why-section">
+
+      <div class="container why-layout">
+
+        <div class="why-intro reveal">
+
+          <div class="section-kicker">
+            Why Choose Nazeer
+          </div>
+
+          <h2 class="section-title">
+            Taste, Care and Service
+            in Every Function.
+          </h2>
+
+          <p class="section-text">
+            A premium catering experience is built
+            on the details guests notice.
+          </p>
+
+        </div>
+
+        <div class="why-grid">
+
+          <div class="why-card reveal">
+
+            <div class="why-number">
+              01
+            </div>
+
+            <h3>
+              Authentic Taste
+            </h3>
+
+            <p>
+              Rich Mughlai and Hyderabadi-inspired flavours.
+            </p>
+
+          </div>
+
+          <div class="why-card reveal">
+
+            <div class="why-number">
+              02
+            </div>
+
+            <h3>
+              Fresh Preparation
+            </h3>
+
+            <p>
+              Food prepared with care for your special occasion.
+            </p>
+
+          </div>
+
+          <div class="why-card reveal">
+
+            <div class="why-number">
+              03
+            </div>
+
+            <h3>
+              Hygienic Preparation
+            </h3>
+
+            <p>
+              Clean and careful preparation from
+              kitchen to service.
+            </p>
+
+          </div>
+
+          <div class="why-card reveal">
+
+            <div class="why-number">
+              04
+            </div>
+
+            <h3>
+              Professional Service
+            </h3>
+
+            <p>
+              Organized support for small and large functions.
+            </p>
+
+          </div>
+
+          <div class="why-card reveal">
+
+            <div class="why-number">
+              05
+            </div>
+
+            <h3>
+              Customized Menus
+            </h3>
+
+            <p>
+              Menus shaped around your guests and event needs.
+            </p>
+
+          </div>
+
+          <div class="why-card reveal">
+
+            <div class="why-number">
+              06
+            </div>
+
+            <h3>
+              Premium Value
+            </h3>
+
+            <p>
+              Premium taste with affordable pricing and flexibility.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         WHOLESALE KIRANA
+    ==================================================== -->
+
+    <section class="wholesale-section">
+
+      <div class="container">
+
+        <div class="wholesale-content reveal">
+
+          <div class="section-kicker">
+            Wholesale & Bulk Orders
+          </div>
+
+          <h2 class="section-title">
+            All Your Function Needs
+            at Better Value.
+          </h2>
+
+          <p class="section-text">
+            Wholesale Kirana items and bulk requirements
+            are also available for function planning
+            and larger needs.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">
+              Wholesale Orders
             </span>
 
-            <h2>
-                Clean Food Preparation Matters
-            </h2>
-
-            <p>
-                At KGN Biriyani Point, cleanliness and
-                proper food preparation are important
-                parts of providing food for customers.
-            </p>
-
-            <p>
-                Food preparation and catering arrangements
-                should follow appropriate hygiene and
-                cleanliness practices.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section class="section contact-section" id="contact">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-                CONTACT US
+            <span class="tag">
+              Kirana Stores
             </span>
 
-            <h2>
-                Get In Touch
-            </h2>
+            <span class="tag">
+              Bulk Requirements
+            </span>
 
-            <p>
-                Contact KGN Biriyani Point for biriyani
-                and catering enquiries.
-            </p>
+            <span class="tag">
+              Large Events
+            </span>
+
+            <span class="tag">
+              Function Essentials
+            </span>
+
+          </div>
+
+          <div class="button-row">
+
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20I%20would%20like%20to%20enquire%20about%20wholesale%20Kirana%20items."
+              target="_blank"
+              rel="noopener"
+            >
+              Wholesale Enquiry →
+            </a>
+
+          </div>
 
         </div>
 
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         GALLERY
+    ==================================================== -->
+
+    <section id="gallery">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div class="section-kicker">
+            Food Gallery
+          </div>
+
+          <h2 class="section-title">
+            The Food Should
+            Speak for Itself.
+          </h2>
+
+          <p class="section-text">
+            Real food imagery for Nazeer Caterers.
+            Click any image to view it larger.
+          </p>
+
+        </div>
+
+        <div class="gallery">
+
+          <div
+            class="gallery-item large reveal"
+            data-image="assets/kebab-platter.png"
+          >
+            <img
+              src="assets/kebab-platter.png"
+              alt="Kebab platter"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item reveal"
+            data-image="assets/crispy-chicken.png"
+          >
+            <img
+              src="assets/crispy-chicken.png"
+              alt="Crispy chicken"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item reveal"
+            data-image="assets/haleem.png"
+          >
+            <img
+              src="assets/haleem.png"
+              alt="Haleem"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item reveal"
+            data-image="assets/seekh-kebab.png"
+          >
+            <img
+              src="assets/seekh-kebab.png"
+              alt="Seekh kebab"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item reveal"
+            data-image="assets/spicy-prawns.png"
+          >
+            <img
+              src="assets/spicy-prawns.png"
+              alt="Spicy prawns"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item wide reveal"
+            data-image="assets/biryani.png"
+          >
+            <img
+              src="assets/biryani.png"
+              alt="Biryani"
+              loading="lazy"
+            />
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         TESTIMONIALS
+    ==================================================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div
+          class="section-head reveal"
+          style="text-align:center;margin-left:auto;margin-right:auto;"
+        >
+
+          <div class="section-kicker">
+            Customer Experience
+          </div>
+
+          <h2 class="section-title">
+            Let Your Guests
+            Say It Best.
+          </h2>
+
+        </div>
+
+        <div class="review-box reveal">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <blockquote>
+            Real customer reviews will be displayed here.
+          </blockquote>
+
+          <small>
+            Add verified reviews from real Nazeer Caterers customers.
+          </small>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         CONTACT
+    ==================================================== -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div class="section-kicker">
+            Contact Nazeer Caterers
+          </div>
+
+          <h2 class="section-title">
+            Let’s Make Your
+            Function Memorable.
+          </h2>
+
+          <p class="section-text">
+            Call, WhatsApp or send your requirements
+            and start planning your event.
+          </p>
+
+        </div>
 
         <div class="contact-grid">
 
+          <div class="contact-card reveal">
 
-            <!-- PHONE -->
+            <h3>
+              Nazeer Caterers
+            </h3>
 
-            <div class="contact-card">
-
-                <div class="contact-icon">
-                    📞
-                </div>
-
-                <h3>
-                    Call Us
-                </h3>
-
-                <a href="tel:+918247462902">
-                    82474 62902
-                </a>
-
-                <a href="tel:+919494277704">
-                    94942 77704
-                </a>
-
-            </div>
-
-
-            <!-- ADDRESS -->
-
-            <div class="contact-card">
-
-                <div class="contact-icon">
-                    📍
-                </div>
-
-                <h3>
-                    Our Address
-                </h3>
-
-                <p>
-                    IB Chowrasta,<br>
-                    Near HDFC Bank,<br>
-                    Downstairs, Ram Nagar,<br>
-                    Mancherial, Telangana 504208
-                </p>
-
-            </div>
-
-
-            <!-- WHATSAPP -->
-
-            <div class="contact-card">
-
-                <div class="contact-icon">
-                    💬
-                </div>
-
-                <h3>
-                    WhatsApp
-                </h3>
-
-                <p>
-                    Send us a message for
-                    orders and enquiries.
-                </p>
-
-                <a
-                    href="https://wa.me/918247462902?text=Hello%20KGN%20Biriyani%20Point"
-                    target="_blank"
-                    class="contact-button">
-
-                    Chat on WhatsApp
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- MAP -->
-
-        <div class="map-box">
-
-            <div class="map-content">
-
-                <div class="map-icon">
-                    📍
-                </div>
-
-                <h3>
-                    Find KGN Biriyani Point
-                </h3>
-
-                <p>
-                    IB Chowrasta, near HDFC Bank,
-                    Downstairs, Ram Nagar,
-                    Mancherial, Telangana 504208
-                </p>
-
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=IB+Chowrasta+near+HDFC+Bank+Ram+Nagar+Mancherial+Telangana+504208"
-                    target="_blank"
-                    class="btn btn-primary">
-
-                    Open In Google Maps
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= DESIGNER ================= -->
-
-<section class="designer-section">
-
-    <div class="container designer-card">
-
-        <div class="designer-icon">
-            💻
-        </div>
-
-        <div class="designer-content">
-
-            <span class="designer-label">
-                WEBSITE DESIGN & DEVELOPMENT
-            </span>
-
-            <h2>
-                Mohammed Zaid Ahmed
-            </h2>
-
-            <p>
-                Website designed and developed by
-                Mohammed Zaid Ahmed.
+            <p class="contact-row">
+              <strong>Proprietors:</strong>
+              Nazeer Khan & Nazim Khan
             </p>
 
-            <div class="designer-links">
+            <p class="contact-row">
+              <strong>Location:</strong>
+              Hussainipura, Karimnagar,
+              Telangana 505001
+            </p>
 
-                <a
-                    href="https://instagram.com/_zaid40_"
-                    target="_blank">
+            <p class="contact-row">
+              <strong>Phone / WhatsApp:</strong>
+              <a href="tel:+918801433616">
+                8801433616
+              </a>
+            </p>
 
-                    📸 Instagram: @_zaid40_
+            <p class="contact-row">
+              <strong>Instagram:</strong>
+              <a
+                href="https://instagram.com/catering_serv88"
+                target="_blank"
+                rel="noopener"
+              >
+                @catering_serv88
+              </a>
+            </p>
 
-                </a>
+            <div class="button-row">
 
+              <a
+                class="btn btn-primary"
+                href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp Now →
+              </a>
 
-                <a
-                    href="https://wa.me/918019155616?text=Hello%20Zaid%2C%20I%20am%20contacting%20you%20about%20website%20design.">
-
-                    💬 WhatsApp: +91 8019155616
-
-                </a>
+              <a
+                class="btn btn-secondary"
+                href="tel:+918801433616"
+              >
+                Call Now
+              </a>
 
             </div>
 
+          </div>
+
+          <div class="map-card reveal">
+
+            <iframe
+              src="https://www.google.com/maps?q=Hussainipura%2C%20Karimnagar%2C%20Telangana%20505001&output=embed"
+              loading="lazy"
+              allowfullscreen
+              title="Hussainipura Karimnagar map"
+            ></iframe>
+
+          </div>
+
         </div>
 
-    </div>
+      </div>
 
-</section>
+    </section>
 
+  </main>
 
-</main>
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
 
+  <footer>
 
-<!-- ================= FOOTER ================= -->
+    <div class="container">
 
-<footer class="footer">
+      <div class="footer-grid">
 
-    <div class="container footer-content">
+        <!-- Brand -->
 
         <div>
 
-            <h3>
-                KGN Biriyani Point
-            </h3>
+          <a href="#home" class="brand">
 
-            <p>
-                Biriyani & Catering in Mancherial
-            </p>
+            <span class="brand-name">
+              Nazeer Caterers
+            </span>
+
+            <span class="brand-tag">
+              Premium Taste • Affordable Prices
+            </span>
+
+          </a>
+
+          <p class="footer-description">
+            Premium catering for Weddings, Nikah, Rasam,
+            Manja, Walima, Birthday Parties and small or
+            large functions in Karimnagar.
+          </p>
+
+          <!-- CHANGE YOUR NAME HERE -->
+
+          <div class="designer-box">
+            <strong>Designed & Developed by</strong>
+            <br />
+            YOUR NAME
+          </div>
 
         </div>
 
+        <!-- Explore -->
 
-        <div class="footer-links">
+        <div>
 
-            <a href="#home">Home</a>
+          <div class="footer-heading">
+            Explore
+          </div>
+
+          <div class="footer-links">
+
             <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#catering">Catering</a>
-            <a href="#contact">Contact</a>
+
+            <a href="#menu">Cuisine</a>
+
+            <a href="#favourites">
+              Guest Favourites
+            </a>
+
+            <a href="#events">
+              Events
+            </a>
+
+            <a href="#sweets">
+              Sweets
+            </a>
+
+            <a href="#gallery">
+              Gallery
+            </a>
+
+          </div>
 
         </div>
 
+        <!-- Services -->
+
+        <div>
+
+          <div class="footer-heading">
+            Services
+          </div>
+
+          <div class="footer-links">
+
+            <a href="#services">
+              Guest Transportation
+            </a>
+
+            <a href="#services">
+              Luxury Car Services
+            </a>
+
+            <a href="#services">
+              Wholesale Kirana
+            </a>
+
+            <a href="#events">
+              Event Catering
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- Connect -->
+
+        <div>
+
+          <div class="footer-heading">
+            Connect
+          </div>
+
+          <div class="footer-links">
+
+            <a href="tel:+918801433616">
+              8801433616
+            </a>
+
+            <a
+              href="https://wa.me/918801433616"
+              target="_blank"
+              rel="noopener"
+            >
+              WhatsApp
+            </a>
+
+            <a
+              href="https://instagram.com/catering_serv88"
+              target="_blank"
+              rel="noopener"
+            >
+              Instagram
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Nazeer Caterers. All rights reserved.
+        </span>
+
+        <span>
+          Premium Taste • Professional Service
+        </span>
+
+      </div>
+
     </div>
 
+  </footer>
 
-    <div class="footer-bottom">
+  <!-- =====================================================
+       MOBILE WHATSAPP
+  ====================================================== -->
 
-        <p>
-            © <span id="year"></span>
-            KGN Biriyani Point.
-            All rights reserved.
-        </p>
+  <div class="mobile-whatsapp">
 
-    </div>
+    <a
+      href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20I%20would%20like%20to%20book%20my%20function."
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp Nazeer Caterers
+    </a>
 
-</footer>
+  </div>
+
+  <!-- =====================================================
+       LIGHTBOX
+  ====================================================== -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      aria-label="Close image"
+    >
+      ×
+    </button>
+
+    <img
+      class="lightbox-image"
+      id="lightboxImage"
+      src=""
+      alt="Food gallery preview"
+    />
+
+  </div>
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    /* -----------------------------------------
+       MOBILE MENU
+    ----------------------------------------- */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+      const isOpen =
+        navLinks.classList.toggle("open");
+
+      document.body.classList.toggle(
+        "lock",
+        isOpen
+      );
+
+      menuToggle.textContent =
+        isOpen ? "×" : "☰";
+
+    });
+
+    navLinks.querySelectorAll("a")
+      .forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("open");
+
+          document.body.classList.remove("lock");
+
+          menuToggle.textContent = "☰";
+
+        });
+
+      });
 
 
-<!-- ================= FLOATING WHATSAPP ================= -->
+    /* -----------------------------------------
+       SCROLL REVEAL
+    ----------------------------------------- */
 
-<a
-    href="https://wa.me/918247462902?text=Hello%20KGN%20Biriyani%20Point"
-    target="_blank"
-    class="floating-whatsapp"
-    aria-label="WhatsApp">
+    const revealElements =
+      document.querySelectorAll(".reveal");
 
-    💬
+    const revealObserver =
+      new IntersectionObserver(
+        (entries) => {
 
-</a>
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("show");
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+    revealElements.forEach((element) => {
+
+      revealObserver.observe(element);
+
+    });
 
 
-<script src="script.js"></script>
+    /* -----------------------------------------
+       LIGHTBOX
+    ----------------------------------------- */
+
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const lightboxClose =
+      document.getElementById("lightboxClose");
+
+
+    document
+      .querySelectorAll(".gallery-item")
+      .forEach((item) => {
+
+        item.addEventListener("click", () => {
+
+          lightboxImage.src =
+            item.dataset.image;
+
+          lightbox.classList.add("open");
+
+          lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+          );
+
+          document.body.classList.add("lock");
+
+        });
+
+      });
+
+
+    function closeLightbox() {
+
+      lightbox.classList.remove("open");
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      lightboxImage.src = "";
+
+      document.body.classList.remove("lock");
+
+    }
+
+
+    lightboxClose.addEventListener(
+      "click",
+      closeLightbox
+    );
+
+
+    lightbox.addEventListener(
+      "click",
+      (event) => {
+
+        if (
+          event.target === lightbox
+        ) {
+          closeLightbox();
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (event.key === "Escape") {
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+  </script>
 
 </body>
 </html>
-```
