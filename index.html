@@ -3,1523 +3,1056 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Nazeer Caterers | Premium Catering in Karimnagar</title>
+  <meta name="description" content="Nazeer Caterers in Karimnagar offers premium Mughlai and Hyderabadi catering for Weddings, Nikah, Rasam, Manja, Walima, Birthday Parties, family functions and large or small events." />
+  <meta name="keywords" content="Nazeer Caterers Karimnagar, catering Karimnagar, Mughlai catering, Hyderabadi catering, wedding catering, Nikah catering, Walima catering, biryani catering" />
+  <meta name="theme-color" content="#100b0a" />
 
-  <meta
-    name="description"
-    content="Nazeer Caterers in Karimnagar offers premium Mughlai and Hyderabadi catering for Weddings, Nikah, Rasam, Manja, Walima, Birthday Parties, Family Functions and large or small events."
-  />
-
-  <meta
-    name="keywords"
-    content="Nazeer Caterers Karimnagar, catering Karimnagar, Mughlai catering Karimnagar, Hyderabadi catering Karimnagar, wedding catering Karimnagar, Nikah catering, Walima catering, Biryani catering"
-  />
-
-  <meta name="theme-color" content="#080808" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* =====================================================
-       ROOT
-    ====================================================== */
-
-    :root {
-      --bg: #080808;
-      --bg-2: #0d0d0d;
-      --surface: #121212;
-      --surface-2: #181818;
-
-      --text: #f5efe6;
-      --text-soft: #d6cec4;
-      --muted: #999188;
-
-      --gold: #cda75f;
-      --gold-light: #efd49a;
-      --gold-dark: #8b6931;
-
-      --border: rgba(255, 255, 255, 0.09);
-      --gold-border: rgba(205, 167, 95, 0.28);
-
-      --max-width: 1220px;
-      --radius: 24px;
-
-      --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    :root{
+      --ink:#0a0808;
+      --ink2:#100c0b;
+      --panel:#16110f;
+      --panel2:#1b1411;
+      --cream:#f6eee1;
+      --soft:#d2c6b8;
+      --muted:#9a8f84;
+      --gold:#d1aa63;
+      --gold2:#f0d39a;
+      --wine:#5b1c22;
+      --wine2:#8d2c34;
+      --emerald:#173d32;
+      --line:rgba(255,255,255,.09);
+      --goldLine:rgba(209,170,99,.28);
+      --radius:24px;
+      --max:1220px;
+      --ease:cubic-bezier(.2,.8,.2,1);
     }
 
-    /* =====================================================
-       RESET
-    ====================================================== */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "DM Sans", sans-serif;
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
       background:
-        radial-gradient(
-          circle at 85% 0%,
-          rgba(205, 167, 95, 0.08),
-          transparent 25%
-        ),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
+        radial-gradient(circle at 15% 0%, rgba(141,44,52,.12), transparent 24%),
+        radial-gradient(circle at 90% 20%, rgba(209,170,99,.08), transparent 25%),
+        var(--ink);
+      color:var(--cream);
+      font-family:"DM Sans",sans-serif;
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    body.lock{overflow:hidden}
+    img{display:block;width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(92%,var(--max));margin:auto}
+
+    /* HEADER */
+    .topbar{
+      min-height:38px;
+      background:linear-gradient(90deg,#080606,#120b0b,#080606);
+      border-bottom:1px solid var(--line);
+      color:#a99e94;
+      font-size:12px;
+    }
+    .topbar-inner{
+      min-height:38px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+    .topbar strong{color:var(--gold2);font-weight:600}
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:1200;
+      border-bottom:1px solid var(--line);
+      background:rgba(10,8,8,.86);
+      backdrop-filter:blur(22px);
+      -webkit-backdrop-filter:blur(22px);
+    }
+    .nav-inner{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      line-height:1;
+      flex-shrink:0;
+    }
+    .brand-name{
+      font-family:"Playfair Display",serif;
+      font-size:27px;
+      letter-spacing:.01em;
+    }
+    .brand-tag{
+      margin-top:7px;
+      color:var(--gold);
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:20px;
+    }
+    .nav-links a{
+      color:#d1c7bc;
+      font-size:13px;
+      transition:.3s var(--ease);
+    }
+    .nav-links a:hover{color:var(--gold2)}
+    .nav-cta{
+      min-height:44px;
+      padding:0 18px;
+      border-radius:999px;
+      border:1px solid var(--gold);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      color:var(--gold2);
+      transition:.35s var(--ease);
+    }
+    .nav-cta:hover{
+      color:#15100e;
+      background:linear-gradient(135deg,var(--gold2),var(--gold));
+      transform:translateY(-2px);
+    }
+    .menu-toggle{
+      width:46px;height:46px;
+      display:none;
+      place-items:center;
+      border-radius:50%;
+      background:#17110f;
+      color:#fff;
+      border:1px solid var(--line);
+      cursor:pointer;
     }
 
-    body.lock {
-      overflow: hidden;
+    /* GLOBAL */
+    section{padding:118px 0;position:relative}
+    .section-kicker{
+      color:var(--gold2);
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.24em;
+      margin-bottom:15px;
+    }
+    .section-title{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(40px,5vw,65px);
+      line-height:1.03;
+      letter-spacing:-.03em;
+    }
+    .section-text{
+      color:var(--muted);
+      max-width:690px;
+      margin-top:16px;
+      font-size:15px;
+    }
+    .gold-line{
+      width:68px;height:1px;
+      background:linear-gradient(90deg,var(--gold),transparent);
+      margin:18px 0;
+    }
+    .section-head{max-width:780px;margin-bottom:52px}
+    .reveal{
+      opacity:0;
+      transform:translateY(28px);
+      transition:opacity .8s var(--ease),transform .8s var(--ease);
+    }
+    .reveal.show{opacity:1;transform:none}
+
+    /* BUTTONS */
+    .button-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:30px;
+    }
+    .btn{
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-size:13px;
+      font-weight:700;
+      transition:.35s var(--ease);
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold2),var(--gold));
+      color:#17100d;
+      box-shadow:0 15px 35px rgba(209,170,99,.13);
+    }
+    .btn-primary:hover{
+      transform:translateY(-3px);
+      box-shadow:0 20px 46px rgba(209,170,99,.25);
+    }
+    .btn-secondary{
+      color:#fff;
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.035);
+      backdrop-filter:blur(12px);
+    }
+    .btn-secondary:hover{
+      color:var(--gold2);
+      border-color:var(--goldLine);
+      transform:translateY(-3px);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    /* HERO - image is <img>, not CSS background */
+    .hero{
+      min-height:calc(100vh - 120px);
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+      background:var(--ink);
     }
-
-    button {
-      font: inherit;
+    .hero-photo{
+      position:absolute;
+      inset:0;
+      z-index:-3;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
     }
-
-    img {
-      display: block;
-      width: 100%;
-    }
-
-    .container {
-      width: min(92%, var(--max-width));
-      margin: 0 auto;
-    }
-
-    /* =====================================================
-       ANNOUNCEMENT
-    ====================================================== */
-
-    .announcement {
-      border-bottom: 1px solid var(--border);
-      background: #050505;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .announcement-inner {
-      min-height: 38px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .announcement strong {
-      color: var(--gold-light);
-      font-weight: 600;
-    }
-
-    /* =====================================================
-       NAVIGATION
-    ====================================================== */
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(8, 8, 8, 0.82);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      min-height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-
-    .brand-name {
-      font-family: "Playfair Display", serif;
-      font-size: 26px;
-      letter-spacing: 0.01em;
-    }
-
-    .brand-tag {
-      margin-top: 7px;
-      color: var(--gold);
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 23px;
-    }
-
-    .nav-links a {
-      color: #d2cbc2;
-      font-size: 13px;
-      transition: 0.3s var(--ease);
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: width 0.3s var(--ease);
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-light);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-book {
-      min-height: 44px;
-      padding: 0 18px;
-      border: 1px solid var(--gold);
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold-light);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      transition: 0.35s var(--ease);
-    }
-
-    .nav-book:hover {
-      background: linear-gradient(
-        135deg,
-        var(--gold-light),
-        var(--gold)
-      );
-      color: #111;
-      transform: translateY(-2px);
-    }
-
-    .menu-toggle {
-      width: 46px;
-      height: 46px;
-      display: none;
-      place-items: center;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: #121212;
-      color: #fff;
-      cursor: pointer;
-      font-size: 20px;
-    }
-
-    /* =====================================================
-       COMMON
-    ====================================================== */
-
-    section {
-      padding: 120px 0;
-      position: relative;
-    }
-
-    .section-kicker {
-      color: var(--gold-light);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.25em;
-      margin-bottom: 14px;
-    }
-
-    .section-title {
-      font-family: "Playfair Display", serif;
-      font-weight: 600;
-      font-size: clamp(39px, 5vw, 64px);
-      line-height: 1.04;
-      letter-spacing: -0.025em;
-    }
-
-    .section-text {
-      color: var(--muted);
-      max-width: 680px;
-      margin-top: 18px;
-      font-size: 15px;
-    }
-
-    .section-head {
-      max-width: 780px;
-      margin-bottom: 52px;
-    }
-
-    .gold-line {
-      width: 55px;
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        var(--gold),
-        transparent
-      );
-      margin: 18px 0;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition:
-        opacity 0.8s var(--ease),
-        transform 0.8s var(--ease);
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =====================================================
-       BUTTONS
-    ====================================================== */
-
-    .button-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .btn {
-      min-height: 54px;
-      padding: 0 24px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      transition: 0.35s var(--ease);
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      color: #121212;
-      background: linear-gradient(
-        135deg,
-        var(--gold-light),
-        var(--gold)
-      );
-      box-shadow:
-        0 14px 34px rgba(205, 167, 95, 0.14),
-        inset 0 1px rgba(255, 255, 255, 0.25);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow:
-        0 20px 45px rgba(205, 167, 95, 0.25),
-        inset 0 1px rgba(255, 255, 255, 0.35);
-    }
-
-    .btn-secondary {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.035);
-      border-color: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(12px);
-    }
-
-    .btn-secondary:hover {
-      color: var(--gold-light);
-      border-color: var(--gold-border);
-      transform: translateY(-3px);
-    }
-
-    /* =====================================================
-       HERO
-    ====================================================== */
-
-    .hero {
-      min-height: calc(100vh - 118px);
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      isolation: isolate;
-
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      z-index:-2;
       background:
-        linear-gradient(
-          90deg,
-          rgba(5, 5, 5, 0.97) 0%,
-          rgba(5, 5, 5, 0.88) 37%,
-          rgba(5, 5, 5, 0.47) 72%,
-          rgba(5, 5, 5, 0.58) 100%
-        ),
-        url("assets/biryani.png") center / cover no-repeat;
+        linear-gradient(90deg,rgba(6,5,5,.98) 0%,rgba(6,5,5,.88) 38%,rgba(6,5,5,.38) 72%,rgba(6,5,5,.62) 100%),
+        linear-gradient(to bottom,transparent 55%,rgba(10,8,8,.98) 100%);
     }
+    .hero-glow{
+      position:absolute;
+      width:420px;height:420px;
+      right:8%;top:16%;
+      background:radial-gradient(circle,rgba(209,170,99,.14),transparent 68%);
+      filter:blur(3px);
+      z-index:-1;
+    }
+    .hero-content{max-width:800px;padding:92px 0 135px}
+    .hero-location{
+      display:inline-flex;
+      align-items:center;
+      gap:11px;
+      color:var(--gold2);
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:10px;
+      margin-bottom:23px;
+    }
+    .hero-location:before{
+      content:"";
+      width:42px;height:1px;
+      background:var(--gold);
+    }
+    .hero h1{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(54px,8vw,100px);
+      line-height:.95;
+      letter-spacing:-.045em;
+    }
+    .hero h1 span{color:var(--gold2)}
+    .hero-copy{
+      max-width:700px;
+      margin-top:27px;
+      color:#cec2b5;
+      font-size:17px;
+    }
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:34px;
+    }
+    .hero-proof span{color:#bcb1a7;font-size:11px}
+    .hero-proof span:before{
+      content:"✦";
+      color:var(--gold);
+      margin-right:8px;
+    }
+    .scroll{
+      position:absolute;
+      left:50%;bottom:24px;
+      transform:translateX(-50%);
+      color:#7f7770;
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      text-align:center;
+    }
+    .scroll i{
+      display:block;
+      width:1px;height:32px;
+      margin:8px auto 0;
+      background:linear-gradient(var(--gold),transparent);
+      animation:pulse 1.8s infinite;
+    }
+    @keyframes pulse{50%{opacity:.25;transform:translateY(7px)}}
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+    /* ABOUT */
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+    .about-photo{
+      min-height:590px;
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      border:1px solid var(--line);
+      background:#120e0d;
+    }
+    .about-photo img{
+      height:100%;
+      min-height:590px;
+      object-fit:cover;
+    }
+    .about-badge{
+      position:absolute;
+      right:18px;bottom:18px;
+      width:190px;
+      padding:18px 19px;
+      border-radius:18px;
+      background:rgba(10,7,7,.76);
+      border:1px solid var(--goldLine);
+      backdrop-filter:blur(15px);
+    }
+    .about-badge strong{
+      color:var(--gold2);
+      font-family:"Playfair Display",serif;
+      font-size:28px;
+      line-height:1;
+      display:block;
+      margin-bottom:5px;
+    }
+    .about-points{display:grid;gap:12px;margin-top:27px}
+    .about-point{
+      display:flex;gap:14px;
+      padding:15px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .about-point>span{color:var(--gold);margin-top:2px}
+    .about-point strong{font-size:14px}
+    .about-point small{display:block;color:#897f75;font-size:12px;margin-top:3px}
+
+    /* CUISINE */
+    .cuisine{
       background:
-        radial-gradient(
-          circle at 76% 42%,
-          rgba(205, 167, 95, 0.13),
-          transparent 22%
-        ),
-        linear-gradient(
-          to bottom,
-          transparent 52%,
-          rgba(8, 8, 8, 0.98) 100%
-        );
-      z-index: -1;
+        radial-gradient(circle at 15% 15%,rgba(23,61,50,.10),transparent 23%),
+        transparent;
     }
-
-    .hero-content {
-      max-width: 800px;
-      padding: 90px 0 130px;
+    .food-grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:15px;
     }
-
-    .hero-location {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-      color: var(--gold-light);
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 10px;
-      margin-bottom: 23px;
+    .food-card{
+      position:relative;
+      min-height:390px;
+      overflow:hidden;
+      border-radius:23px;
+      border:1px solid var(--line);
+      background:#130f0e;
+      grid-column:span 4;
+      transition:.42s var(--ease);
     }
-
-    .hero-location::before {
-      content: "";
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-weight: 600;
-      font-size: clamp(53px, 8vw, 98px);
-      line-height: 0.96;
-      letter-spacing: -0.045em;
-    }
-
-    .hero h1 span {
-      color: var(--gold-light);
-    }
-
-    .hero-copy {
-      max-width: 690px;
-      color: #cec5bb;
-      font-size: 17px;
-      margin-top: 27px;
-    }
-
-    .hero-proof {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 21px;
-      margin-top: 35px;
-    }
-
-    .hero-proof span {
-      color: #b7afa6;
-      font-size: 11px;
-    }
-
-    .hero-proof span::before {
-      content: "✦";
-      color: var(--gold);
-      margin-right: 8px;
-    }
-
-    .scroll-indicator {
-      position: absolute;
-      left: 50%;
-      bottom: 25px;
-      transform: translateX(-50%);
-      color: #817a73;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.19em;
-      text-align: center;
-    }
-
-    .scroll-indicator span {
-      display: block;
-      width: 1px;
-      height: 32px;
-      margin: 7px auto 0;
-      background: linear-gradient(
-        var(--gold),
-        transparent
-      );
-      animation: scrollPulse 1.8s infinite;
-    }
-
-    @keyframes scrollPulse {
-      50% {
-        opacity: 0.25;
-        transform: translateY(7px);
-      }
-    }
-
-    /* =====================================================
-       ABOUT
-    ====================================================== */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .about-image {
-      min-height: 580px;
-      border-radius: 30px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid var(--border);
-    }
-
-    .about-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 580px;
-      object-fit: cover;
-    }
-
-    .about-badge {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      width: 185px;
-      padding: 18px 20px;
-      border-radius: 18px;
-      background: rgba(8, 8, 8, 0.75);
-      border: 1px solid var(--gold-border);
-      backdrop-filter: blur(16px);
-    }
-
-    .about-badge strong {
-      display: block;
-      color: var(--gold-light);
-      font-family: "Playfair Display", serif;
-      font-size: 27px;
-      line-height: 1;
-      margin-bottom: 5px;
-    }
-
-    .about-copy p {
-      color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 18px;
-    }
-
-    .about-points {
-      margin-top: 28px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .about-point {
-      display: flex;
-      gap: 14px;
-      padding: 15px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .about-point > span {
-      color: var(--gold);
-      margin-top: 2px;
-    }
-
-    .about-point strong {
-      font-size: 14px;
-    }
-
-    .about-point small {
-      display: block;
-      color: #898178;
-      font-size: 12px;
-      margin-top: 3px;
-    }
-
-    /* =====================================================
-       CUISINE
-    ====================================================== */
-
-    .cuisine-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 15px;
-    }
-
-    .food-card {
-      position: relative;
-      min-height: 390px;
-      overflow: hidden;
-      border-radius: 23px;
-      border: 1px solid var(--border);
-      grid-column: span 4;
-      background: var(--surface);
-      transition: 0.4s var(--ease);
-    }
-
     .food-card:nth-child(4),
-    .food-card:nth-child(5) {
-      grid-column: span 6;
-      min-height: 330px;
+    .food-card:nth-child(5){
+      grid-column:span 6;
+      min-height:330px;
     }
-
-    .food-card img {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s var(--ease);
+    .food-card img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .8s var(--ease);
     }
-
-    .food-card:hover img {
-      transform: scale(1.07);
+    .food-card:hover{
+      transform:translateY(-7px);
+      border-color:var(--goldLine);
     }
-
-    .food-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--gold-border);
+    .food-card:hover img{transform:scale(1.065)}
+    .food-overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(to top,rgba(4,3,3,.96),rgba(4,3,3,.2) 64%,rgba(4,3,3,.04));
     }
-
-    .food-overlay {
-      position: absolute;
-      inset: 0;
+    .food-label{
+      position:absolute;
+      left:17px;top:17px;
+      padding:7px 10px;
+      border-radius:999px;
+      color:#fff;
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      background:rgba(0,0,0,.58);
+      border:1px solid rgba(255,255,255,.14);
+      z-index:2;
+    }
+    .food-info{
+      position:absolute;
+      left:22px;right:22px;bottom:22px;
+    }
+    .food-info h3{
+      font-family:"Playfair Display",serif;
+      font-size:31px;
+    }
+    .food-info p{font-size:12px;color:#b7aca2;margin-top:4px}
+    .text-card{
+      grid-column:span 4;
+      min-height:220px;
+      padding:26px;
+      border-radius:23px;
+      border:1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
       background:
-        linear-gradient(
-          to top,
-          rgba(4, 4, 4, 0.96),
-          rgba(4, 4, 4, 0.24) 62%,
-          rgba(4, 4, 4, 0.03)
-        );
+        radial-gradient(circle at top right,rgba(141,44,52,.13),transparent 35%),
+        var(--panel);
+      transition:.4s var(--ease);
     }
-
-    .food-label {
-      position: absolute;
-      left: 18px;
-      top: 18px;
-      z-index: 2;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.58);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #eee;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .food-info {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 22px;
-      z-index: 2;
-    }
-
-    .food-info h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 31px;
-    }
-
-    .food-info p {
-      color: #b7afa7;
-      font-size: 12px;
-      margin-top: 4px;
-    }
-
-    .text-card {
-      grid-column: span 4;
-      min-height: 220px;
-      border-radius: 23px;
-      border: 1px solid var(--border);
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+    .text-card:nth-last-child(1){
       background:
-        radial-gradient(
-          circle at top right,
-          rgba(205, 167, 95, 0.1),
-          transparent 35%
-        ),
-        var(--surface);
-      transition: 0.4s var(--ease);
+        radial-gradient(circle at top right,rgba(23,61,50,.15),transparent 35%),
+        var(--panel);
+    }
+    .text-card:hover{
+      transform:translateY(-6px);
+      border-color:var(--goldLine);
+    }
+    .text-card h3{
+      font-size:30px;
+      margin:7px 0;
+    }
+    .text-card p{color:var(--muted);font-size:13px}
+
+    /* FAVOURITES */
+    .favourites{
+      display:grid;
+      grid-template-columns:.86fr 1.14fr;
+      gap:60px;
+      align-items:start;
+    }
+    .favourite-list{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    .favourite{
+      padding:21px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+      transition:.35s var(--ease);
+    }
+    .favourite:hover{transform:translateY(-4px);border-color:var(--goldLine)}
+    .favourite h3{
+      font-family:"Playfair Display",serif;
+      font-size:21px;
+    }
+    .favourite p{font-size:11px;color:#8e847a;margin-top:4px}
+    .note{
+      margin-top:19px;
+      padding:16px 17px;
+      border-left:2px solid var(--gold);
+      background:rgba(209,170,99,.04);
+      color:#9b9187;
+      font-size:12px;
     }
 
-    .text-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--gold-border);
-    }
-
-    .text-card h3 {
-      font-size: 29px;
-      margin: 7px 0;
-    }
-
-    .text-card p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* =====================================================
-       GUEST FAVOURITES
-    ====================================================== */
-
-    .favourites-layout {
-      display: grid;
-      grid-template-columns: 0.84fr 1.16fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .favourites-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .favourite {
-      padding: 21px;
-      border-radius: 18px;
-      border: 1px solid var(--border);
+    /* SWEETS */
+    .sweet-box{
+      display:grid;
+      grid-template-columns:1.06fr .94fr;
+      gap:44px;
+      align-items:center;
+      padding:33px;
+      border:1px solid var(--goldLine);
+      border-radius:29px;
       background:
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.035),
-          rgba(255, 255, 255, 0.012)
-        );
-      transition: 0.35s var(--ease);
+        radial-gradient(circle at 85% 10%,rgba(209,170,99,.10),transparent 31%),
+        var(--panel);
+    }
+    .sweet-photo{
+      border-radius:21px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#120d0c;
+    }
+    .sweet-photo img{
+      aspect-ratio:16/9;
+      object-fit:cover;
+    }
+    .sweet-box h3{
+      font-family:"Playfair Display",serif;
+      font-size:41px;
+      line-height:1.05;
+    }
+    .pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin:22px 0 26px;
+    }
+    .pill{
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#100d0c;
+      color:#d4c9bd;
+      font-size:11px;
     }
 
-    .favourite:hover {
-      transform: translateY(-4px);
-      border-color: var(--gold-border);
-    }
-
-    .favourite h3 {
-      font-size: 21px;
-    }
-
-    .favourite p {
-      color: #8f877f;
-      font-size: 11px;
-      margin-top: 5px;
-    }
-
-    .favourite-note {
-      padding: 17px 18px;
-      margin-top: 20px;
-      border-left: 2px solid var(--gold);
-      background: rgba(205, 167, 95, 0.04);
-      color: #a29a92;
-      font-size: 12px;
-    }
-
-    /* =====================================================
-       SWEETS
-    ====================================================== */
-
-    .sweet-box {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 44px;
-      align-items: center;
-      padding: 34px;
-      border: 1px solid var(--gold-border);
-      border-radius: 28px;
+    /* EVENTS */
+    .event-shell{
+      padding:42px;
+      border-radius:30px;
+      border:1px solid var(--goldLine);
       background:
-        radial-gradient(
-          circle at top right,
-          rgba(205, 167, 95, 0.09),
-          transparent 31%
-        ),
-        var(--surface);
+        radial-gradient(circle at top right,rgba(141,44,52,.11),transparent 30%),
+        var(--panel);
     }
-
-    .sweet-image {
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid var(--border);
+    .event-shell h3{
+      font-family:"Playfair Display",serif;
+      font-size:35px;
     }
-
-    .sweet-image img {
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
+    .event-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:11px;
+      margin-top:31px;
     }
-
-    .sweet-box h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 42px;
-      line-height: 1.05;
+    .event-card{
+      padding:18px;
+      border-radius:15px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      transition:.35s var(--ease);
     }
+    .event-card:hover{transform:translateY(-3px);border-color:var(--goldLine)}
+    .event-card h4{font-family:"Playfair Display",serif;font-size:20px}
 
-    .sweet-pills {
-      margin: 22px 0 25px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .sweet-pill {
-      padding: 9px 13px;
-      border-radius: 999px;
-      background: #111;
-      border: 1px solid var(--border);
-      color: #d0c8bf;
-      font-size: 11px;
-    }
-
-    /* =====================================================
-       EVENTS
-    ====================================================== */
-
-    .event-shell {
-      padding: 42px;
-      border-radius: 30px;
-      border: 1px solid var(--gold-border);
+    /* SERVICES */
+    .services{
       background:
-        radial-gradient(
-          circle at top right,
-          rgba(205, 167, 95, 0.1),
-          transparent 30%
-        ),
-        var(--surface);
+        radial-gradient(circle at 90% 20%,rgba(23,61,50,.11),transparent 25%),
+        transparent;
+    }
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+    }
+    .service{
+      padding:31px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+      transition:.35s var(--ease);
+    }
+    .service:hover{transform:translateY(-6px);border-color:var(--goldLine)}
+    .service-icon{
+      width:52px;height:52px;
+      display:grid;place-items:center;
+      border-radius:15px;
+      border:1px solid var(--goldLine);
+      background:rgba(209,170,99,.07);
+      font-size:22px;
+      margin-bottom:23px;
+    }
+    .service h3{
+      font-family:"Playfair Display",serif;
+      font-size:28px;
+      margin-bottom:10px;
+    }
+    .service p{font-size:13px;color:var(--muted)}
+
+    /* WHY */
+    .why{
+      background:#0e0a09;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .why-layout{
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:65px;
+    }
+    .why-intro{position:sticky;top:115px;height:max-content}
+    .why-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      border-top:1px solid var(--line);
+      border-left:1px solid var(--line);
+    }
+    .why-card{
+      padding:28px;
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .why-no{
+      font-size:10px;
+      color:var(--gold);
+      letter-spacing:.14em;
+      margin-bottom:16px;
+    }
+    .why-card h3{
+      font-family:"Playfair Display",serif;
+      font-size:23px;
+      margin-bottom:7px;
+    }
+    .why-card p{color:var(--muted);font-size:12px}
+
+    /* WHOLESALE */
+    .wholesale{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(100deg,rgba(9,6,6,.97),rgba(9,6,6,.78));
+      overflow:hidden;
+    }
+    .wholesale .container{
+      position:relative;
+    }
+    .wholesale-photo{
+      position:absolute;
+      right:-5%;
+      top:-90px;
+      width:48%;
+      height:420px;
+      object-fit:cover;
+      opacity:.32;
+      mask-image:linear-gradient(90deg,transparent 0%,black 35%,black 100%);
+      -webkit-mask-image:linear-gradient(90deg,transparent 0%,black 35%,black 100%);
+    }
+    .wholesale-content{position:relative;z-index:2;max-width:790px}
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin:24px 0 27px;
+    }
+    .tag{
+      padding:10px 13px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:#d3c7bb;
+      font-size:11px;
     }
 
-    .event-shell h3 {
-      font-size: 35px;
+    /* GALLERY */
+    .gallery{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      grid-auto-rows:220px;
+      gap:13px;
     }
-
-    .event-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 11px;
-      margin-top: 31px;
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:#130f0e;
+      cursor:pointer;
     }
-
-    .event-card {
-      padding: 18px;
-      border-radius: 15px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.02);
-      transition: 0.35s var(--ease);
+    .gallery-item.large{grid-row:span 2}
+    .gallery-item.wide{grid-column:span 2}
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .8s var(--ease);
     }
-
-    .event-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--gold-border);
+    .gallery-item:hover img{transform:scale(1.06)}
+    .gallery-item:after{
+      content:"VIEW";
+      position:absolute;
+      right:13px;bottom:13px;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,.6);
+      border:1px solid rgba(255,255,255,.15);
+      color:#fff;
+      font-size:9px;
+      letter-spacing:.14em;
+      opacity:0;
+      transition:.3s;
     }
+    .gallery-item:hover:after{opacity:1}
 
-    .event-card h4 {
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
     }
-
-    /* =====================================================
-       ADDITIONAL SERVICES
-    ====================================================== */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .service-card {
-      padding: 30px;
-      border-radius: 22px;
-      border: 1px solid var(--border);
+    .contact-card{
+      padding:33px;
+      border-radius:24px;
+      border:1px solid var(--goldLine);
       background:
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.04),
-          rgba(255, 255, 255, 0.015)
-        );
-      transition: 0.35s var(--ease);
+        radial-gradient(circle at top right,rgba(209,170,99,.08),transparent 28%),
+        var(--panel);
     }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--gold-border);
+    .contact-card h3{
+      font-family:"Playfair Display",serif;
+      font-size:35px;
+      margin-bottom:12px;
     }
-
-    .service-icon {
-      width: 50px;
-      height: 50px;
-      display: grid;
-      place-items: center;
-      border-radius: 15px;
-      background: rgba(205, 167, 95, 0.08);
-      border: 1px solid var(--gold-border);
-      color: var(--gold-light);
-      font-size: 21px;
-      margin-bottom: 22px;
+    .contact-row{
+      color:var(--muted);
+      font-size:14px;
+      margin:9px 0;
     }
-
-    .service-card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* =====================================================
-       WHY CHOOSE
-    ====================================================== */
-
-    .why-section {
-      background: #0d0d0d;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .why-layout {
-      display: grid;
-      grid-template-columns: 0.82fr 1.18fr;
-      gap: 65px;
-    }
-
-    .why-intro {
-      position: sticky;
-      top: 115px;
-      height: max-content;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-top: 1px solid var(--border);
-      border-left: 1px solid var(--border);
-    }
-
-    .why-card {
-      padding: 28px;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .why-number {
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      margin-bottom: 16px;
-    }
-
-    .why-card h3 {
-      font-size: 23px;
-      margin-bottom: 7px;
-    }
-
-    .why-card p {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* =====================================================
-       WHOLESALE
-    ====================================================== */
-
-    .wholesale-section {
+    .contact-row strong{color:#fff}
+    .contact-row a:hover{color:var(--gold2)}
+    .contact-side{
+      border-radius:24px;
+      padding:33px;
+      border:1px solid var(--line);
       background:
-        linear-gradient(
-          100deg,
-          rgba(7, 7, 7, 0.97),
-          rgba(7, 7, 7, 0.77)
-        ),
-        url("assets/crispy-chicken.png") center / cover no-repeat;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+        linear-gradient(135deg,rgba(23,61,50,.18),rgba(91,28,34,.14)),
+        var(--panel);
+    }
+    .contact-side h3{
+      font-family:"Playfair Display",serif;
+      font-size:30px;
+      margin-bottom:10px;
+    }
+    .contact-side p{color:var(--muted);font-size:13px}
+    .contact-links{
+      display:grid;
+      gap:11px;
+      margin-top:20px;
+    }
+    .contact-link{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      padding:12px 14px;
+      border-radius:13px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.025);
+      color:#d4c9bd;
+      font-size:13px;
+      transition:.3s var(--ease);
+    }
+    .contact-link:hover{
+      color:var(--gold2);
+      border-color:var(--goldLine);
+      transform:translateX(3px);
     }
 
-    .wholesale-content {
-      max-width: 800px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: 24px 0 27px;
-    }
-
-    .tag {
-      padding: 10px 13px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.035);
-      color: #d2c9c0;
-      font-size: 11px;
-    }
-
-    /* =====================================================
-       GALLERY
-    ====================================================== */
-
-    .gallery {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr 0.8fr;
-      grid-auto-rows: 220px;
-      gap: 13px;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      cursor: pointer;
-    }
-
-    .gallery-item.large {
-      grid-row: span 2;
-    }
-
-    .gallery-item.wide {
-      grid-column: span 2;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s var(--ease);
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.06);
-    }
-
-    .gallery-item::after {
-      content: "VIEW";
-      position: absolute;
-      right: 13px;
-      bottom: 13px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.58);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: #fff;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      opacity: 0;
-      transition: opacity 0.3s var(--ease);
-    }
-
-    .gallery-item:hover::after {
-      opacity: 1;
-    }
-
-    /* =====================================================
-       TESTIMONIAL
-    ====================================================== */
-
-    .review-box {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 50px 30px;
-      text-align: center;
-      border-radius: 28px;
-      border: 1px solid var(--gold-border);
+    /* FOOTER */
+    footer{
       background:
-        radial-gradient(
-          circle at top,
-          rgba(205, 167, 95, 0.09),
-          transparent 50%
-        ),
-        var(--surface);
+        radial-gradient(circle at 80% 20%,rgba(91,28,34,.11),transparent 28%),
+        #070505;
+      border-top:1px solid var(--line);
+      padding:68px 0 32px;
     }
-
-    .stars {
-      color: var(--gold-light);
-      letter-spacing: 0.14em;
-      margin-bottom: 17px;
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr 1fr;
+      gap:35px;
+      padding-bottom:50px;
     }
-
-    .review-box blockquote {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(25px, 4vw, 40px);
-      line-height: 1.25;
+    .footer-description{
+      color:#81776f;
+      max-width:370px;
+      font-size:13px;
+      margin-top:17px;
     }
-
-    .review-box small {
-      display: block;
-      color: #8a827a;
-      font-size: 12px;
-      margin-top: 18px;
+    .footer-heading{
+      color:var(--gold2);
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.17em;
+      margin-bottom:16px;
     }
-
-    /* =====================================================
-       CONTACT
-    ====================================================== */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
+    .footer-links{display:grid;gap:9px}
+    .footer-links a{
+      color:#82776f;
+      font-size:13px;
+      transition:.25s;
     }
+    .footer-links a:hover{color:var(--gold2)}
 
-    .contact-card,
-    .map-card {
-      border-radius: 23px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      overflow: hidden;
-    }
-
-    .contact-card {
-      padding: 32px;
-    }
-
-    .contact-card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 34px;
-      margin-bottom: 14px;
-    }
-
-    .contact-row {
-      margin: 9px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .contact-row strong {
-      color: #fff;
-    }
-
-    .contact-row a:hover {
-      color: var(--gold-light);
-    }
-
-    .map-card iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 330px;
-      border: 0;
-      filter: grayscale(1) contrast(1.05);
-    }
-
-    /* =====================================================
-       FOOTER
-    ====================================================== */
-
-    footer {
-      padding: 65px 0 32px;
-      background: #060606;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 1fr 1fr 1fr;
-      gap: 35px;
-      padding-bottom: 48px;
-    }
-
-    .footer-description {
-      max-width: 360px;
-      color: #817a73;
-      font-size: 13px;
-      margin-top: 17px;
-    }
-
-    .footer-heading {
-      color: var(--gold-light);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.17em;
-      margin-bottom: 16px;
-    }
-
-    .footer-links {
-      display: grid;
-      gap: 9px;
-    }
-
-    .footer-links a {
-      color: #827b73;
-      font-size: 13px;
-      transition: 0.25s;
-    }
-
-    .footer-links a:hover {
-      color: var(--gold-light);
-    }
-
-    /* Designer box - deliberately medium */
-    .designer-box {
-      width: max-content;
-      max-width: 100%;
-      margin-top: 20px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 1px solid var(--gold-border);
+    /* MEDIUM DEVELOPER BOX */
+    .developer-card{
+      width:min(360px,100%);
+      margin-top:24px;
+      padding:18px;
+      border-radius:16px;
+      border:1px solid var(--goldLine);
       background:
-        linear-gradient(
-          135deg,
-          rgba(205, 167, 95, 0.08),
-          rgba(255, 255, 255, 0.02)
-        );
-      color: #979087;
-      font-size: 10px;
-      letter-spacing: 0.03em;
+        linear-gradient(135deg,rgba(209,170,99,.09),rgba(255,255,255,.018));
+      box-shadow:0 15px 35px rgba(0,0,0,.16);
+    }
+    .developer-card small{
+      color:#81776f;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:9px;
+    }
+    .developer-card strong{
+      display:block;
+      color:var(--gold2);
+      font-family:"Playfair Display",serif;
+      font-size:21px;
+      margin-top:4px;
+    }
+    .developer-card .developer-meta{
+      margin-top:8px;
+      color:#a99d91;
+      font-size:12px;
+    }
+    .developer-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:13px;
+    }
+    .dev-btn{
+      padding:8px 11px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:#cfc3b6;
+      font-size:10px;
+      transition:.3s;
+    }
+    .dev-btn:hover{
+      color:var(--gold2);
+      border-color:var(--goldLine);
     }
 
-    .designer-box strong {
-      color: var(--gold-light);
-      font-weight: 700;
+    .footer-bottom{
+      padding-top:23px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      color:#59524c;
+      font-size:10px;
     }
 
-    .footer-bottom {
-      padding-top: 22px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: #5b5651;
-      font-size: 10px;
+    /* MOBILE CTA */
+    .mobile-wa{display:none}
+
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      z-index:3000;
+      display:none;
+      place-items:center;
+      padding:25px;
+      background:rgba(0,0,0,.94);
+      backdrop-filter:blur(15px);
+    }
+    .lightbox.open{display:grid}
+    .lightbox img{
+      width:auto;
+      max-width:95vw;
+      max-height:88vh;
+      border-radius:19px;
+      box-shadow:0 35px 90px rgba(0,0,0,.58);
+    }
+    .lightbox-close{
+      position:absolute;
+      right:20px;top:20px;
+      width:46px;height:46px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.16);
+      background:#171210;
+      color:#fff;
+      font-size:24px;
+      cursor:pointer;
     }
 
-    /* =====================================================
-       MOBILE WHATSAPP
-    ====================================================== */
-
-    .mobile-whatsapp {
-      display: none;
+    /* IMAGE ERROR STATE */
+    .image-error{
+      background:linear-gradient(135deg,#1a0f0f,#101411);
+      display:flex !important;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#b4a89b;
+      padding:25px;
+    }
+    .image-error:before{
+      content:"Photo missing";
+      display:block;
+      color:var(--gold2);
+      font-family:"Playfair Display",serif;
+      font-size:23px;
     }
 
-    /* =====================================================
-       LIGHTBOX
-    ====================================================== */
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 3000;
-      display: none;
-      place-items: center;
-      padding: 25px;
-      background: rgba(0, 0, 0, 0.93);
-      backdrop-filter: blur(14px);
+    /* RESPONSIVE */
+    @media(max-width:1080px){
+      .nav-links{gap:13px}
+      .about,.favourites,.why-layout,.contact-grid{
+        grid-template-columns:1fr;
+      }
+      .why-intro{position:static}
+      .service-grid{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .wholesale-photo{width:54%;opacity:.22}
     }
 
-    .lightbox.open {
-      display: grid;
-    }
+    @media(max-width:760px){
+      section{padding:84px 0}
+      .topbar{display:none}
+      .nav-inner{min-height:70px}
+      .menu-toggle{display:grid}
+      .nav-cta{display:none}
 
-    .lightbox-image {
-      width: auto;
-      max-width: 95vw;
-      max-height: 87vh;
-      border-radius: 19px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
-    }
-
-    .lightbox-close {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      background: #141414;
-      color: #fff;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    /* =====================================================
-       RESPONSIVE
-    ====================================================== */
-
-    @media (max-width: 1100px) {
-      .nav-links {
-        gap: 14px;
+      .nav-links{
+        position:fixed;
+        top:70px;left:0;right:0;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:17px;
+        padding:25px 7%;
+        background:rgba(8,6,6,.98);
+        border-bottom:1px solid var(--line);
       }
+      .nav-links.open{display:flex}
+      .nav-links a{font-size:17px}
 
-      .about-grid,
-      .favourites-layout,
-      .why-layout,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero{min-height:88vh}
+      .hero-content{padding:80px 0 125px}
+      .hero h1{font-size:clamp(46px,14vw,72px)}
+      .hero-copy{font-size:15px}
+      .button-row{flex-direction:column;align-items:stretch}
+      .button-row .btn{width:100%}
+      .hero-proof{flex-direction:column;gap:10px}
 
-      .why-intro {
-        position: static;
-      }
+      .about-photo,.about-photo img{min-height:400px}
 
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 760px) {
-      section {
-        padding: 85px 0;
-      }
-
-      .announcement {
-        display: none;
-      }
-
-      .nav-inner {
-        min-height: 70px;
-      }
-
-      .menu-toggle {
-        display: grid;
-      }
-
-      .nav-book {
-        display: none;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 17px;
-        padding: 25px 7%;
-        background: rgba(7, 7, 7, 0.98);
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        font-size: 17px;
-      }
-
-      .hero {
-        min-height: 88vh;
-      }
-
-      .hero-content {
-        padding: 80px 0 125px;
-      }
-
-      .hero h1 {
-        font-size: clamp(47px, 14vw, 72px);
-      }
-
-      .hero-copy {
-        font-size: 15px;
-      }
-
-      .button-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .button-row .btn {
-        width: 100%;
-      }
-
-      .hero-proof {
-        flex-direction: column;
-        gap: 11px;
-      }
-
-      .about-image,
-      .about-image img {
-        min-height: 410px;
-      }
-
-      .cuisine-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .food-grid{grid-template-columns:1fr}
       .food-card,
       .food-card:nth-child(4),
       .food-card:nth-child(5),
-      .text-card {
-        grid-column: auto;
+      .text-card{grid-column:auto}
+      .food-card{min-height:340px}
+
+      .favourite-list{grid-template-columns:1fr}
+
+      .sweet-box{grid-template-columns:1fr;padding:22px}
+      .sweet-box h3{font-size:34px}
+
+      .event-shell{padding:25px}
+      .event-grid{grid-template-columns:1fr}
+
+      .service-grid{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr}
+
+      .wholesale-photo{
+        position:static;
+        width:100%;
+        height:220px;
+        margin-top:25px;
+        opacity:.35;
+        mask-image:none;
+        -webkit-mask-image:none;
+        border-radius:18px;
+        object-fit:cover;
       }
 
-      .food-card {
-        min-height: 340px;
+      .gallery{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:175px;
       }
+      .gallery-item.wide{grid-column:span 2}
 
-      .favourites-list {
-        grid-template-columns: 1fr;
+      .contact-grid{grid-template-columns:1fr}
+
+      .footer-grid{grid-template-columns:1fr}
+      .footer-bottom{flex-direction:column}
+
+      .mobile-wa{
+        display:block;
+        position:fixed;
+        left:13px;
+        right:13px;
+        bottom:13px;
+        z-index:1800;
       }
-
-      .sweet-box {
-        grid-template-columns: 1fr;
-        padding: 22px;
-      }
-
-      .sweet-box h3 {
-        font-size: 34px;
-      }
-
-      .event-shell {
-        padding: 25px;
-      }
-
-      .event-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 175px;
-      }
-
-      .gallery-item.wide {
-        grid-column: span 2;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-      }
-
-      .mobile-whatsapp {
-        display: block;
-        position: fixed;
-        left: 13px;
-        right: 13px;
-        bottom: 13px;
-        z-index: 1800;
-      }
-
-      .mobile-whatsapp a {
-        display: block;
-        text-align: center;
-        padding: 14px 16px;
-        border-radius: 999px;
-        background: linear-gradient(
-          135deg,
-          var(--gold-light),
-          var(--gold)
-        );
-        color: #111;
-        font-weight: 800;
-        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
+      .mobile-wa a{
+        display:block;
+        text-align:center;
+        padding:14px 16px;
+        border-radius:999px;
+        background:linear-gradient(135deg,var(--gold2),var(--gold));
+        color:#12100e;
+        font-weight:800;
+        box-shadow:0 14px 35px rgba(0,0,0,.5);
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
       }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
+      .reveal{opacity:1;transform:none}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =====================================================
-       TOP INFORMATION BAR
-  ====================================================== -->
-
-  <div class="announcement">
-    <div class="container announcement-inner">
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
       <span>Hussainipura, Karimnagar, Telangana 505001</span>
       <strong>Call / WhatsApp: 8801433616</strong>
     </div>
   </div>
 
-  <!-- =====================================================
-       NAVIGATION
-  ====================================================== -->
-
+  <!-- HEADER -->
   <header class="nav">
     <div class="container nav-inner">
 
       <a href="#home" class="brand">
         <span class="brand-name">Nazeer Caterers</span>
-        <span class="brand-tag">
-          Premium Taste • Affordable Prices
-        </span>
+        <span class="brand-tag">Premium Taste • Affordable Prices</span>
       </a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Open menu"
-      >
-        ☰
-      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
 
       <nav class="nav-links" id="navLinks">
         <a href="#home">Home</a>
@@ -1534,7 +1067,7 @@
       </nav>
 
       <a
-        class="nav-book"
+        class="nav-cta"
         href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20I%20would%20like%20to%20book%20my%20function."
         target="_blank"
         rel="noopener"
@@ -1547,14 +1080,20 @@
 
   <main>
 
-    <!-- ===================================================
-         HERO
-    ==================================================== -->
-
+    <!-- HERO -->
     <section class="hero" id="home">
 
-      <div class="container">
+      <img
+        class="hero-photo"
+        src="./assets/biryani.png"
+        alt=""
+        data-photo
+      />
 
+      <div class="hero-overlay"></div>
+      <div class="hero-glow"></div>
+
+      <div class="container">
         <div class="hero-content reveal">
 
           <div class="hero-location">
@@ -1574,7 +1113,6 @@
           </p>
 
           <div class="button-row">
-
             <a
               class="btn btn-primary"
               href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20I%20would%20like%20to%20book%20my%20event."
@@ -1584,49 +1122,40 @@
               WhatsApp to Book →
             </a>
 
-            <a
-              class="btn btn-secondary"
-              href="#menu"
-            >
+            <a class="btn btn-secondary" href="#menu">
               Explore Our Cuisine ↓
             </a>
-
           </div>
 
           <div class="hero-proof">
-
             <span>Small & Large Functions</span>
             <span>Customized Menus</span>
             <span>Hygienic Preparation</span>
             <span>Professional Service</span>
-
           </div>
 
         </div>
-
       </div>
 
-      <div class="scroll-indicator">
+      <div class="scroll">
         Scroll to explore
-        <span></span>
+        <i></i>
       </div>
 
     </section>
 
-    <!-- ===================================================
-         ABOUT
-    ==================================================== -->
-
+    <!-- ABOUT -->
     <section id="about">
 
-      <div class="container about-grid">
+      <div class="container about">
 
-        <div class="about-image reveal">
+        <div class="about-photo reveal">
 
           <img
-            src="assets/kebab-platter.png"
-            alt="Premium kebab platter"
+            src="./assets/kebab-platter.png"
+            alt="Kebab platter"
             loading="lazy"
+            data-photo
           />
 
           <div class="about-badge">
@@ -1638,9 +1167,7 @@
 
         <div class="reveal">
 
-          <div class="section-kicker">
-            About Nazeer Caterers
-          </div>
+          <div class="section-kicker">About Nazeer Caterers</div>
 
           <h2 class="section-title">
             We Take Care of Everything.
@@ -1667,40 +1194,25 @@
 
             <div class="about-point">
               <span>✦</span>
-
               <div>
                 <strong>Pure Hyderabadi Flavours</strong>
-
-                <small>
-                  Rich, aromatic food inspired by the flavours
-                  of Hyderabad.
-                </small>
+                <small>Rich, aromatic food inspired by Hyderabad.</small>
               </div>
             </div>
 
             <div class="about-point">
               <span>✦</span>
-
               <div>
                 <strong>Customized Menus</strong>
-
-                <small>
-                  Build your menu around your guests,
-                  occasion and requirements.
-                </small>
+                <small>Built around your guests, occasion and requirements.</small>
               </div>
             </div>
 
             <div class="about-point">
               <span>✦</span>
-
               <div>
                 <strong>Professional Event Service</strong>
-
-                <small>
-                  Organized support focused on a smooth
-                  function experience.
-                </small>
+                <small>Organized support focused on a smooth function experience.</small>
               </div>
             </div>
 
@@ -1712,19 +1224,14 @@
 
     </section>
 
-    <!-- ===================================================
-         CUISINE
-    ==================================================== -->
-
-    <section id="menu">
+    <!-- CUISINE -->
+    <section id="menu" class="cuisine">
 
       <div class="container">
 
         <div class="section-head reveal">
 
-          <div class="section-kicker">
-            Our Cuisine
-          </div>
+          <div class="section-kicker">Our Cuisine</div>
 
           <h2 class="section-title">
             Food Made for the Table
@@ -1732,233 +1239,107 @@
           </h2>
 
           <p class="section-text">
-            A premium selection focused on rich, bold and
-            celebratory flavours your guests love.
+            A premium selection focused on rich,
+            bold and celebratory flavours.
           </p>
 
         </div>
 
-        <div class="cuisine-grid">
-
-          <!-- BIRYANI -->
+        <div class="food-grid">
 
           <article class="food-card reveal">
-
-            <img
-              src="assets/biryani.png"
-              alt="Biryani"
-              loading="lazy"
-            />
-
-            <span class="food-label">
-              Signature
-            </span>
-
+            <img src="./assets/biryani.png" alt="Biryani" loading="lazy" data-photo />
+            <span class="food-label">Signature</span>
             <div class="food-overlay"></div>
-
             <div class="food-info">
               <h3>Biryani</h3>
-
-              <p>
-                Fragrant rice, rich spices and
-                celebratory flavour.
-              </p>
+              <p>Fragrant rice, rich spices and celebratory flavour.</p>
             </div>
-
           </article>
 
-          <!-- KEBAB -->
-
           <article class="food-card reveal">
-
-            <img
-              src="assets/seekh-kebab.png"
-              alt="Seekh kebabs"
-              loading="lazy"
-            />
-
-            <span class="food-label">
-              Guest Favourite
-            </span>
-
+            <img src="./assets/seekh-kebab.png" alt="Seekh kebabs" loading="lazy" data-photo />
+            <span class="food-label">Guest Favourite</span>
             <div class="food-overlay"></div>
-
             <div class="food-info">
-
               <h3>Kebabs</h3>
-
-              <p>
-                Grilled, aromatic and prepared
-                for memorable gatherings.
-              </p>
-
+              <p>Grilled, aromatic and prepared for memorable gatherings.</p>
             </div>
-
           </article>
 
-          <!-- MUGHLAI -->
-
           <article class="food-card reveal">
-
-            <img
-              src="assets/haleem.png"
-              alt="Mughlai haleem"
-              loading="lazy"
-            />
-
-            <span class="food-label">
-              Mughlai
-            </span>
-
+            <img src="./assets/haleem.png" alt="Haleem" loading="lazy" data-photo />
+            <span class="food-label">Mughlai</span>
             <div class="food-overlay"></div>
-
             <div class="food-info">
-
               <h3>Mughlai</h3>
-
-              <p>
-                Rich, slow-cooked and full
-                of depth.
-              </p>
-
+              <p>Rich, slow-cooked and full of depth.</p>
             </div>
-
           </article>
 
-          <!-- SEAFOOD -->
-
           <article class="food-card reveal">
-
-            <img
-              src="assets/spicy-prawns.png"
-              alt="Spicy prawns"
-              loading="lazy"
-            />
-
-            <span class="food-label">
-              Non-Veg
-            </span>
-
+            <img src="./assets/spicy-prawns.png" alt="Spicy prawns" loading="lazy" data-photo />
+            <span class="food-label">Non-Veg</span>
             <div class="food-overlay"></div>
-
             <div class="food-info">
-
               <h3>Roasted & Seafood</h3>
-
-              <p>
-                Boldly seasoned specialities
-                for non-veg lovers.
-              </p>
-
+              <p>Boldly seasoned specialities for non-veg lovers.</p>
             </div>
-
           </article>
-
-          <!-- CURRY -->
 
           <article class="food-card reveal">
-
-            <img
-              src="assets/chicken-curry.png"
-              alt="Chicken curry"
-              loading="lazy"
-            />
-
-            <span class="food-label">
-              Mughlai • Non-Veg
-            </span>
-
+            <img src="./assets/chicken-curry.png" alt="Chicken curry" loading="lazy" data-photo />
+            <span class="food-label">Mughlai • Non-Veg</span>
             <div class="food-overlay"></div>
-
             <div class="food-info">
-
               <h3>Curries</h3>
-
-              <p>
-                Deep, rich gravies that
-                bring the feast together.
-              </p>
-
+              <p>Deep, rich gravies that bring the feast together.</p>
             </div>
-
           </article>
-
-          <!-- CHINESE -->
 
           <div class="text-card reveal">
-
-            <div class="section-kicker">
-              Also Available
-            </div>
-
-            <h3>
-              Chinese
-            </h3>
-
-            <p>
-              Freshly prepared Chinese favourites
-              for guests who enjoy variety.
-            </p>
-
+            <div class="section-kicker">Also Available</div>
+            <h3>Chinese</h3>
+            <p>Freshly prepared Chinese favourites for guests who enjoy variety.</p>
           </div>
 
-          <!-- VEG/NON VEG -->
-
           <div class="text-card reveal">
-
-            <div class="section-kicker">
-              Menu Choice
-            </div>
-
-            <h3>
-              Veg & Non-Veg
-            </h3>
-
-            <p>
-              Vegetarian and non-vegetarian choices
-              are available according to your event menu.
-            </p>
-
+            <div class="section-kicker">Menu Choice</div>
+            <h3>Veg & Non-Veg</h3>
+            <p>Vegetarian and non-vegetarian choices can be included in your function menu.</p>
           </div>
 
         </div>
 
       </div>
-
     </section>
 
-    <!-- ===================================================
-         GUEST FAVOURITES
-    ==================================================== -->
-
+    <!-- FAVOURITES -->
     <section id="favourites">
 
-      <div class="container favourites-layout">
+      <div class="container favourites">
 
         <div class="reveal">
 
-          <div class="section-kicker">
-            Guest Favourites
-          </div>
+          <div class="section-kicker">Guest Favourites</div>
 
           <h2 class="section-title">
             Dishes Guests Ask For Again.
           </h2>
 
           <p class="section-text">
-            This section highlights popular choices and
-            can later be updated with the exact final
-            Nazeer Caterers menu.
+            Spotlight popular choices and signature
+            selections that belong on the menu.
           </p>
 
-          <div class="favourite-note">
-            Menus are customized according to your
-            function, guest count and requirements.
+          <div class="note">
+            Menus are customized according to your function,
+            guest count and requirements.
           </div>
 
         </div>
 
-        <div class="favourites-list">
+        <div class="favourite-list">
 
           <div class="favourite reveal">
             <h3>Hyderabadi Biryani</h3>
@@ -2006,50 +1387,38 @@
 
     </section>
 
-    <!-- ===================================================
-         SWEETS
-    ==================================================== -->
-
+    <!-- SWEETS -->
     <section id="sweets">
 
       <div class="container">
 
         <div class="section-head reveal">
-
-          <div class="section-kicker">
-            Sweet Finale
-          </div>
-
+          <div class="section-kicker">Sweet Finale</div>
           <h2 class="section-title">
             Finish the Celebration
             on a Sweet Note.
           </h2>
-
           <p class="section-text">
-            Add sweets and desserts to complete your
-            wedding, Nikah, Walima, birthday or family
-            function menu.
+            Add sweets and desserts to complete
+            weddings, Nikah, Walima, birthdays and
+            family celebrations.
           </p>
-
         </div>
 
         <div class="sweet-box reveal">
 
-          <div class="sweet-image">
-
+          <div class="sweet-photo">
             <img
-              src="assets/hyderabadi-sweets.png"
+              src="./assets/hyderabadi-sweets.png"
               alt="Hyderabadi sweets"
               loading="lazy"
+              data-photo
             />
-
           </div>
 
           <div>
 
-            <div class="section-kicker">
-              Sweets & Desserts
-            </div>
+            <div class="section-kicker">Sweets & Desserts</div>
 
             <h3>
               A Little Sweetness.
@@ -2061,24 +1430,11 @@
               available for your preferred function menu.
             </p>
 
-            <div class="sweet-pills">
-
-              <span class="sweet-pill">
-                Traditional Sweets
-              </span>
-
-              <span class="sweet-pill">
-                Hyderabadi Favourites
-              </span>
-
-              <span class="sweet-pill">
-                Dessert Selection
-              </span>
-
-              <span class="sweet-pill">
-                Customized Orders
-              </span>
-
+            <div class="pills">
+              <span class="pill">Traditional Sweets</span>
+              <span class="pill">Hyderabadi Favourites</span>
+              <span class="pill">Dessert Selection</span>
+              <span class="pill">Customized Orders</span>
             </div>
 
             <a
@@ -2095,22 +1451,15 @@
         </div>
 
       </div>
-
     </section>
 
-    <!-- ===================================================
-         EVENTS
-    ==================================================== -->
-
+    <!-- EVENTS -->
     <section id="events">
 
       <div class="container">
 
         <div class="section-head reveal">
-
-          <div class="section-kicker">
-            Catering & Events
-          </div>
+          <div class="section-kicker">Catering & Events</div>
 
           <h2 class="section-title">
             From Intimate Gatherings
@@ -2118,17 +1467,14 @@
           </h2>
 
           <p class="section-text">
-            We serve small and large functions with
-            customized menus and professional support.
+            We serve small and large functions
+            with customized menus and professional support.
           </p>
-
         </div>
 
         <div class="event-shell reveal">
 
-          <h3>
-            Your Occasion. Our Hospitality.
-          </h3>
+          <h3>Your Occasion. Our Hospitality.</h3>
 
           <p class="section-text">
             Tell us the occasion and we will help shape
@@ -2137,46 +1483,19 @@
 
           <div class="event-grid">
 
-            <div class="event-card">
-              <h4>Weddings</h4>
-            </div>
-
-            <div class="event-card">
-              <h4>Nikah</h4>
-            </div>
-
-            <div class="event-card">
-              <h4>Rasam</h4>
-            </div>
-
-            <div class="event-card">
-              <h4>Manja</h4>
-            </div>
-
-            <div class="event-card">
-              <h4>Walima</h4>
-            </div>
-
-            <div class="event-card">
-              <h4>Birthday Parties</h4>
-            </div>
-
-            <div class="event-card">
-              <h4>Family Functions</h4>
-            </div>
-
-            <div class="event-card">
-              <h4>Small Gatherings</h4>
-            </div>
-
-            <div class="event-card">
-              <h4>Large Functions</h4>
-            </div>
+            <div class="event-card"><h4>Weddings</h4></div>
+            <div class="event-card"><h4>Nikah</h4></div>
+            <div class="event-card"><h4>Rasam</h4></div>
+            <div class="event-card"><h4>Manja</h4></div>
+            <div class="event-card"><h4>Walima</h4></div>
+            <div class="event-card"><h4>Birthday Parties</h4></div>
+            <div class="event-card"><h4>Family Functions</h4></div>
+            <div class="event-card"><h4>Small Gatherings</h4></div>
+            <div class="event-card"><h4>Large Functions</h4></div>
 
           </div>
 
           <div class="button-row">
-
             <a
               class="btn btn-primary"
               href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20I%20would%20like%20to%20plan%20my%20event."
@@ -2185,28 +1504,20 @@
             >
               Plan Your Event →
             </a>
-
           </div>
 
         </div>
 
       </div>
-
     </section>
 
-    <!-- ===================================================
-         ADDITIONAL SERVICES
-    ==================================================== -->
-
-    <section id="services">
+    <!-- SERVICES -->
+    <section id="services" class="services">
 
       <div class="container">
 
         <div class="section-head reveal">
-
-          <div class="section-kicker">
-            More Than Just Catering
-          </div>
+          <div class="section-kicker">More Than Just Catering</div>
 
           <h2 class="section-title">
             Complete Function Support
@@ -2214,23 +1525,18 @@
           </h2>
 
           <p class="section-text">
-            Additional arrangements are available to
-            make your celebration more convenient.
+            Additional arrangements are available
+            to make your celebration more convenient.
           </p>
-
         </div>
 
-        <div class="services-grid">
+        <div class="service-grid">
 
-          <article class="service-card reveal">
+          <article class="service reveal">
 
-            <div class="service-icon">
-              🚗
-            </div>
+            <div class="service-icon">🚗</div>
 
-            <h3>
-              Guest Transportation
-            </h3>
+            <h3>Guest Transportation</h3>
 
             <p>
               Transportation arrangements to help
@@ -2240,15 +1546,11 @@
 
           </article>
 
-          <article class="service-card reveal">
+          <article class="service reveal">
 
-            <div class="service-icon">
-              🚘
-            </div>
+            <div class="service-icon">🚘</div>
 
-            <h3>
-              Luxury Car Services
-            </h3>
+            <h3>Luxury Car Services</h3>
 
             <p>
               Luxury car arrangements for weddings,
@@ -2257,15 +1559,11 @@
 
           </article>
 
-          <article class="service-card reveal">
+          <article class="service reveal">
 
-            <div class="service-icon">
-              🛒
-            </div>
+            <div class="service-icon">🛒</div>
 
-            <h3>
-              Wholesale Kirana
-            </h3>
+            <h3>Wholesale Kirana</h3>
 
             <p>
               Kirana items and function essentials
@@ -2277,22 +1575,16 @@
         </div>
 
       </div>
-
     </section>
 
-    <!-- ===================================================
-         WHY CHOOSE US
-    ==================================================== -->
-
-    <section class="why-section">
+    <!-- WHY CHOOSE US -->
+    <section class="why">
 
       <div class="container why-layout">
 
         <div class="why-intro reveal">
 
-          <div class="section-kicker">
-            Why Choose Nazeer
-          </div>
+          <div class="section-kicker">Why Choose Nazeer</div>
 
           <h2 class="section-title">
             Taste, Care and Service
@@ -2309,115 +1601,57 @@
         <div class="why-grid">
 
           <div class="why-card reveal">
-
-            <div class="why-number">
-              01
-            </div>
-
-            <h3>
-              Authentic Taste
-            </h3>
-
-            <p>
-              Rich Mughlai and Hyderabadi-inspired flavours.
-            </p>
-
+            <div class="why-no">01</div>
+            <h3>Authentic Taste</h3>
+            <p>Rich Mughlai and Hyderabadi-inspired flavours.</p>
           </div>
 
           <div class="why-card reveal">
-
-            <div class="why-number">
-              02
-            </div>
-
-            <h3>
-              Fresh Preparation
-            </h3>
-
-            <p>
-              Food prepared with care for your special occasion.
-            </p>
-
+            <div class="why-no">02</div>
+            <h3>Fresh Preparation</h3>
+            <p>Food prepared with care for your special occasion.</p>
           </div>
 
           <div class="why-card reveal">
-
-            <div class="why-number">
-              03
-            </div>
-
-            <h3>
-              Hygienic Preparation
-            </h3>
-
-            <p>
-              Clean and careful preparation from
-              kitchen to service.
-            </p>
-
+            <div class="why-no">03</div>
+            <h3>Hygienic Preparation</h3>
+            <p>Clean and careful preparation from kitchen to service.</p>
           </div>
 
           <div class="why-card reveal">
-
-            <div class="why-number">
-              04
-            </div>
-
-            <h3>
-              Professional Service
-            </h3>
-
-            <p>
-              Organized support for small and large functions.
-            </p>
-
+            <div class="why-no">04</div>
+            <h3>Professional Service</h3>
+            <p>Organized support for small and large functions.</p>
           </div>
 
           <div class="why-card reveal">
-
-            <div class="why-number">
-              05
-            </div>
-
-            <h3>
-              Customized Menus
-            </h3>
-
-            <p>
-              Menus shaped around your guests and event needs.
-            </p>
-
+            <div class="why-no">05</div>
+            <h3>Customized Menus</h3>
+            <p>Menus shaped around your guests and event needs.</p>
           </div>
 
           <div class="why-card reveal">
-
-            <div class="why-number">
-              06
-            </div>
-
-            <h3>
-              Premium Value
-            </h3>
-
-            <p>
-              Premium taste with affordable pricing and flexibility.
-            </p>
-
+            <div class="why-no">06</div>
+            <h3>Premium Value</h3>
+            <p>Premium taste with affordable pricing and flexibility.</p>
           </div>
 
         </div>
-
       </div>
-
     </section>
 
-    <!-- ===================================================
-         WHOLESALE KIRANA
-    ==================================================== -->
-
-    <section class="wholesale-section">
+    <!-- WHOLESALE -->
+    <section class="wholesale">
 
       <div class="container">
+
+        <img
+          class="wholesale-photo"
+          src="./assets/crispy-chicken.png"
+          alt=""
+          loading="lazy"
+          data-photo
+        />
 
         <div class="wholesale-content reveal">
 
@@ -2437,31 +1671,14 @@
           </p>
 
           <div class="tags">
-
-            <span class="tag">
-              Wholesale Orders
-            </span>
-
-            <span class="tag">
-              Kirana Stores
-            </span>
-
-            <span class="tag">
-              Bulk Requirements
-            </span>
-
-            <span class="tag">
-              Large Events
-            </span>
-
-            <span class="tag">
-              Function Essentials
-            </span>
-
+            <span class="tag">Wholesale Orders</span>
+            <span class="tag">Kirana Stores</span>
+            <span class="tag">Bulk Requirements</span>
+            <span class="tag">Large Events</span>
+            <span class="tag">Function Essentials</span>
           </div>
 
           <div class="button-row">
-
             <a
               class="btn btn-primary"
               href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20I%20would%20like%20to%20enquire%20about%20wholesale%20Kirana%20items."
@@ -2470,28 +1687,20 @@
             >
               Wholesale Enquiry →
             </a>
-
           </div>
 
         </div>
-
       </div>
-
     </section>
 
-    <!-- ===================================================
-         GALLERY
-    ==================================================== -->
-
+    <!-- GALLERY -->
     <section id="gallery">
 
       <div class="container">
 
         <div class="section-head reveal">
 
-          <div class="section-kicker">
-            Food Gallery
-          </div>
+          <div class="section-kicker">Food Gallery</div>
 
           <h2 class="section-title">
             The Food Should
@@ -2499,143 +1708,94 @@
           </h2>
 
           <p class="section-text">
-            Real food imagery for Nazeer Caterers.
-            Click any image to view it larger.
+            The supplied Nazeer Caterers food photos are
+            used throughout this gallery.
           </p>
 
         </div>
 
         <div class="gallery">
 
-          <div
-            class="gallery-item large reveal"
-            data-image="assets/kebab-platter.png"
-          >
-            <img
-              src="assets/kebab-platter.png"
-              alt="Kebab platter"
-              loading="lazy"
-            />
+          <div class="gallery-item large reveal" data-image="./assets/kebab-platter.png">
+            <img src="./assets/kebab-platter.png" alt="Kebab platter" loading="lazy" data-photo />
           </div>
 
-          <div
-            class="gallery-item reveal"
-            data-image="assets/crispy-chicken.png"
-          >
-            <img
-              src="assets/crispy-chicken.png"
-              alt="Crispy chicken"
-              loading="lazy"
-            />
+          <div class="gallery-item reveal" data-image="./assets/crispy-chicken.png">
+            <img src="./assets/crispy-chicken.png" alt="Crispy chicken" loading="lazy" data-photo />
           </div>
 
-          <div
-            class="gallery-item reveal"
-            data-image="assets/haleem.png"
-          >
-            <img
-              src="assets/haleem.png"
-              alt="Haleem"
-              loading="lazy"
-            />
+          <div class="gallery-item reveal" data-image="./assets/haleem.png">
+            <img src="./assets/haleem.png" alt="Haleem" loading="lazy" data-photo />
           </div>
 
-          <div
-            class="gallery-item reveal"
-            data-image="assets/seekh-kebab.png"
-          >
-            <img
-              src="assets/seekh-kebab.png"
-              alt="Seekh kebab"
-              loading="lazy"
-            />
+          <div class="gallery-item reveal" data-image="./assets/seekh-kebab.png">
+            <img src="./assets/seekh-kebab.png" alt="Seekh kebab" loading="lazy" data-photo />
           </div>
 
-          <div
-            class="gallery-item reveal"
-            data-image="assets/spicy-prawns.png"
-          >
-            <img
-              src="assets/spicy-prawns.png"
-              alt="Spicy prawns"
-              loading="lazy"
-            />
+          <div class="gallery-item reveal" data-image="./assets/spicy-prawns.png">
+            <img src="./assets/spicy-prawns.png" alt="Spicy prawns" loading="lazy" data-photo />
           </div>
 
-          <div
-            class="gallery-item wide reveal"
-            data-image="assets/biryani.png"
-          >
-            <img
-              src="assets/biryani.png"
-              alt="Biryani"
-              loading="lazy"
-            />
+          <div class="gallery-item wide reveal" data-image="./assets/biryani.png">
+            <img src="./assets/biryani.png" alt="Biryani" loading="lazy" data-photo />
           </div>
 
         </div>
 
       </div>
-
     </section>
 
-    <!-- ===================================================
-         TESTIMONIALS
-    ==================================================== -->
-
+    <!-- REVIEWS -->
     <section>
 
       <div class="container">
 
-        <div
-          class="section-head reveal"
-          style="text-align:center;margin-left:auto;margin-right:auto;"
-        >
-
-          <div class="section-kicker">
-            Customer Experience
-          </div>
-
+        <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+          <div class="section-kicker">Customer Experience</div>
           <h2 class="section-title">
             Let Your Guests
             Say It Best.
           </h2>
-
         </div>
 
-        <div class="review-box reveal">
+        <div class="reveal" style="
+          max-width:900px;
+          margin:0 auto;
+          padding:50px 30px;
+          text-align:center;
+          border-radius:28px;
+          border:1px solid var(--goldLine);
+          background:radial-gradient(circle at top,rgba(209,170,99,.08),transparent 50%),var(--panel);
+        ">
 
-          <div class="stars">
+          <div style="color:var(--gold2);letter-spacing:.14em;margin-bottom:17px">
             ★★★★★
           </div>
 
-          <blockquote>
+          <blockquote style="
+            font-family:'Playfair Display',serif;
+            font-size:clamp(25px,4vw,40px);
+            line-height:1.25;
+          ">
             Real customer reviews will be displayed here.
           </blockquote>
 
-          <small>
+          <small style="display:block;color:#81776f;margin-top:18px;font-size:12px">
             Add verified reviews from real Nazeer Caterers customers.
           </small>
 
         </div>
 
       </div>
-
     </section>
 
-    <!-- ===================================================
-         CONTACT
-    ==================================================== -->
-
+    <!-- CONTACT -->
     <section id="contact">
 
       <div class="container">
 
         <div class="section-head reveal">
-
-          <div class="section-kicker">
-            Contact Nazeer Caterers
-          </div>
+          <div class="section-kicker">Contact Nazeer Caterers</div>
 
           <h2 class="section-title">
             Let’s Make Your
@@ -2646,16 +1806,13 @@
             Call, WhatsApp or send your requirements
             and start planning your event.
           </p>
-
         </div>
 
         <div class="contact-grid">
 
           <div class="contact-card reveal">
 
-            <h3>
-              Nazeer Caterers
-            </h3>
+            <h3>Nazeer Caterers</h3>
 
             <p class="contact-row">
               <strong>Proprietors:</strong>
@@ -2670,20 +1827,7 @@
 
             <p class="contact-row">
               <strong>Phone / WhatsApp:</strong>
-              <a href="tel:+918801433616">
-                8801433616
-              </a>
-            </p>
-
-            <p class="contact-row">
-              <strong>Instagram:</strong>
-              <a
-                href="https://instagram.com/catering_serv88"
-                target="_blank"
-                rel="noopener"
-              >
-                @catering_serv88
-              </a>
+              <a href="tel:+918801433616">8801433616</a>
             </p>
 
             <div class="button-row">
@@ -2694,7 +1838,7 @@
                 target="_blank"
                 rel="noopener"
               >
-                WhatsApp Now →
+                WhatsApp Nazeer →
               </a>
 
               <a
@@ -2708,36 +1852,72 @@
 
           </div>
 
-          <div class="map-card reveal">
+          <div class="contact-side reveal">
 
-            <iframe
-              src="https://www.google.com/maps?q=Hussainipura%2C%20Karimnagar%2C%20Telangana%20505001&output=embed"
-              loading="lazy"
-              allowfullscreen
-              title="Hussainipura Karimnagar map"
-            ></iframe>
+            <div class="section-kicker">Need a Website?</div>
+
+            <h3>Talk to Mohammed Zaid Ahmed.</h3>
+
+            <p>
+              Website design and development contact for
+              this project. WhatsApp or email for enquiries.
+            </p>
+
+            <div class="contact-links">
+
+              <a
+                class="contact-link"
+                href="https://wa.me/918019155616?text=Hello%20Mohammed%20Zaid%20Ahmed%2C%20I%20am%20contacting%20you%20through%20the%20Nazeer%20Caterers%20website."
+                target="_blank"
+                rel="noopener"
+              >
+                <span>💬</span>
+                <span>WhatsApp: +91 8019155616</span>
+              </a>
+
+              <a
+                class="contact-link"
+                href="tel:+918019155616"
+              >
+                <span>📞</span>
+                <span>Call: +91 8019155616</span>
+              </a>
+
+              <a
+                class="contact-link"
+                href="mailto:mdzaid55616@gmail.com"
+              >
+                <span>✉️</span>
+                <span>mdzaid55616@gmail.com</span>
+              </a>
+
+              <a
+                class="contact-link"
+                href="https://instagram.com/zaid40"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>◎</span>
+                <span>Instagram: @ZAID40</span>
+              </a>
+
+            </div>
 
           </div>
 
         </div>
 
       </div>
-
     </section>
 
   </main>
 
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
+  <!-- FOOTER -->
   <footer>
 
     <div class="container">
 
       <div class="footer-grid">
-
-        <!-- Brand -->
 
         <div>
 
@@ -2759,17 +1939,50 @@
             large functions in Karimnagar.
           </p>
 
-          <!-- CHANGE YOUR NAME HERE -->
+          <div class="developer-card">
 
-          <div class="designer-box">
-            <strong>Designed & Developed by</strong>
-            <br />
-            YOUR NAME
+            <small>Designed & Developed by</small>
+
+            <strong>
+              Mohammed Zaid Ahmed
+            </strong>
+
+            <div class="developer-meta">
+              Premium web design • Development • Support
+            </div>
+
+            <div class="developer-actions">
+
+              <a
+                class="dev-btn"
+                href="https://wa.me/918019155616"
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp
+              </a>
+
+              <a
+                class="dev-btn"
+                href="https://instagram.com/zaid40"
+                target="_blank"
+                rel="noopener"
+              >
+                @ZAID40
+              </a>
+
+              <a
+                class="dev-btn"
+                href="mailto:mdzaid55616@gmail.com"
+              >
+                Email
+              </a>
+
+            </div>
+
           </div>
 
         </div>
-
-        <!-- Explore -->
 
         <div>
 
@@ -2778,32 +1991,15 @@
           </div>
 
           <div class="footer-links">
-
             <a href="#about">About</a>
-
             <a href="#menu">Cuisine</a>
-
-            <a href="#favourites">
-              Guest Favourites
-            </a>
-
-            <a href="#events">
-              Events
-            </a>
-
-            <a href="#sweets">
-              Sweets
-            </a>
-
-            <a href="#gallery">
-              Gallery
-            </a>
-
+            <a href="#favourites">Guest Favourites</a>
+            <a href="#events">Events</a>
+            <a href="#sweets">Sweets</a>
+            <a href="#gallery">Gallery</a>
           </div>
 
         </div>
-
-        <!-- Services -->
 
         <div>
 
@@ -2812,57 +2008,30 @@
           </div>
 
           <div class="footer-links">
-
-            <a href="#services">
-              Guest Transportation
-            </a>
-
-            <a href="#services">
-              Luxury Car Services
-            </a>
-
-            <a href="#services">
-              Wholesale Kirana
-            </a>
-
-            <a href="#events">
-              Event Catering
-            </a>
-
+            <a href="#services">Guest Transportation</a>
+            <a href="#services">Luxury Car Services</a>
+            <a href="#services">Wholesale Kirana</a>
+            <a href="#events">Event Catering</a>
           </div>
 
         </div>
 
-        <!-- Connect -->
-
         <div>
 
           <div class="footer-heading">
-            Connect
+            Nazeer Caterers
           </div>
 
           <div class="footer-links">
+            <a href="tel:+918801433616">8801433616</a>
+            <a href="https://wa.me/918801433616" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://instagram.com/catering_serv88" target="_blank" rel="noopener">@catering_serv88</a>
+          </div>
 
-            <a href="tel:+918801433616">
-              8801433616
-            </a>
-
-            <a
-              href="https://wa.me/918801433616"
-              target="_blank"
-              rel="noopener"
-            >
-              WhatsApp
-            </a>
-
-            <a
-              href="https://instagram.com/catering_serv88"
-              target="_blank"
-              rel="noopener"
-            >
-              Instagram
-            </a>
-
+          <div style="margin-top:22px;color:#6f675f;font-size:11px">
+            Hussainipura, Karimnagar
+            <br />
+            Telangana 505001
           </div>
 
         </div>
@@ -2882,15 +2051,10 @@
       </div>
 
     </div>
-
   </footer>
 
-  <!-- =====================================================
-       MOBILE WHATSAPP
-  ====================================================== -->
-
-  <div class="mobile-whatsapp">
-
+  <!-- MOBILE WHATSAPP -->
+  <div class="mobile-wa">
     <a
       href="https://wa.me/918801433616?text=Hello%20Nazeer%20Caterers%2C%20I%20would%20like%20to%20book%20my%20function."
       target="_blank"
@@ -2898,18 +2062,10 @@
     >
       WhatsApp Nazeer Caterers
     </a>
-
   </div>
 
-  <!-- =====================================================
-       LIGHTBOX
-  ====================================================== -->
-
-  <div
-    class="lightbox"
-    id="lightbox"
-    aria-hidden="true"
-  >
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
 
     <button
       class="lightbox-close"
@@ -2920,7 +2076,6 @@
     </button>
 
     <img
-      class="lightbox-image"
       id="lightboxImage"
       src=""
       alt="Food gallery preview"
@@ -2928,177 +2083,98 @@
 
   </div>
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
-
   <script>
-
-    /* -----------------------------------------
+    /* ---------------------------
        MOBILE MENU
-    ----------------------------------------- */
-
-    const menuToggle =
-      document.getElementById("menuToggle");
-
-    const navLinks =
-      document.getElementById("navLinks");
+    --------------------------- */
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
     menuToggle.addEventListener("click", () => {
-
-      const isOpen =
-        navLinks.classList.toggle("open");
-
-      document.body.classList.toggle(
-        "lock",
-        isOpen
-      );
-
-      menuToggle.textContent =
-        isOpen ? "×" : "☰";
-
+      const open = navLinks.classList.toggle("open");
+      document.body.classList.toggle("lock", open);
+      menuToggle.textContent = open ? "×" : "☰";
     });
 
-    navLinks.querySelectorAll("a")
-      .forEach((link) => {
-
-        link.addEventListener("click", () => {
-
-          navLinks.classList.remove("open");
-
-          document.body.classList.remove("lock");
-
-          menuToggle.textContent = "☰";
-
-        });
-
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        document.body.classList.remove("lock");
+        menuToggle.textContent = "☰";
       });
+    });
 
-
-    /* -----------------------------------------
+    /* ---------------------------
        SCROLL REVEAL
-    ----------------------------------------- */
+    --------------------------- */
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
 
-    const revealElements =
-      document.querySelectorAll(".reveal");
-
-    const revealObserver =
-      new IntersectionObserver(
-        (entries) => {
-
-          entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add("show");
-
-              revealObserver.unobserve(
-                entry.target
-              );
-
-            }
-
-          });
-
-        },
-        {
-          threshold: 0.12
-        }
-      );
-
-    revealElements.forEach((element) => {
-
-      revealObserver.observe(element);
-
+    document.querySelectorAll(".reveal").forEach((el) => {
+      revealObserver.observe(el);
     });
 
-
-    /* -----------------------------------------
-       LIGHTBOX
-    ----------------------------------------- */
-
-    const lightbox =
-      document.getElementById("lightbox");
-
-    const lightboxImage =
-      document.getElementById("lightboxImage");
-
-    const lightboxClose =
-      document.getElementById("lightboxClose");
-
-
-    document
-      .querySelectorAll(".gallery-item")
-      .forEach((item) => {
-
-        item.addEventListener("click", () => {
-
-          lightboxImage.src =
-            item.dataset.image;
-
-          lightbox.classList.add("open");
-
-          lightbox.setAttribute(
-            "aria-hidden",
-            "false"
-          );
-
-          document.body.classList.add("lock");
-
-        });
-
+    /* ---------------------------
+       IMAGE ERROR DIAGNOSTIC
+       Makes missing files visible
+       instead of silently showing
+       blank boxes.
+    --------------------------- */
+    document.querySelectorAll("[data-photo]").forEach((img) => {
+      img.addEventListener("error", () => {
+        img.classList.add("image-error");
+        img.removeAttribute("src");
+        img.alt = "Image file missing. Check the assets folder.";
       });
+    });
 
+    /* ---------------------------
+       LIGHTBOX
+    --------------------------- */
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    document.querySelectorAll(".gallery-item").forEach((item) => {
+      item.addEventListener("click", () => {
+        const image = item.getAttribute("data-image");
+
+        lightboxImage.src = image;
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("lock");
+      });
+    });
 
     function closeLightbox() {
-
       lightbox.classList.remove("open");
-
-      lightbox.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
+      lightbox.setAttribute("aria-hidden", "true");
       lightboxImage.src = "";
-
       document.body.classList.remove("lock");
-
     }
 
+    lightboxClose.addEventListener("click", closeLightbox);
 
-    lightboxClose.addEventListener(
-      "click",
-      closeLightbox
-    );
-
-
-    lightbox.addEventListener(
-      "click",
-      (event) => {
-
-        if (
-          event.target === lightbox
-        ) {
-          closeLightbox();
-        }
-
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
       }
-    );
+    });
 
-
-    document.addEventListener(
-      "keydown",
-      (event) => {
-
-        if (event.key === "Escape") {
-
-          closeLightbox();
-
-        }
-
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeLightbox();
       }
-    );
-
+    });
   </script>
 
 </body>
